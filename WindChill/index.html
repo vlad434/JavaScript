@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="icon.png" />
+    <title>Wind-Chill Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="font temperature">
+        <label for="temperature">Temperature</label>
+        <input type="number" id="temperature" />°F
+      </div>
+      <div class="font speed">
+        <label for="speed">Speed</label>
+        <input type="number" id="speed" />mph
+      </div>
+
+      <div class="calculate">
+        <button class="btn" id="calculate-btn">CALCULATE</button>
+      </div>
+
+      <div class="outputs">
+        <div class="temperature-output">
+          <label for="temp-output">Temp:</label>
+          <p class="output" id="temp-output"></p>
+          <i class="fas fa-thermometer-full"></i>
+        </div>
+
+        <div class="speed-output">
+          <label for="speed-output">Speed:</label>
+          <p class="output" id="speed-output"></p>
+          <i class="fas fa-wind"></i>
+        </div>
+
+        <div class="wc-output">
+          <label for="wc-output">WCI:</label>
+          <p class="output" id="wc-output"></p>
+          <i class="fas fa-thermometer"></i>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

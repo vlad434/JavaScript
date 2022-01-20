@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Notes App</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation bar -->
+      <div class="navbar">
+        <p class="title">MyNotes</p>
+        <div class="add-btn">
+          <button id="add-btn">
+            <i class="fa fa-plus-circle"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ADD FORM -->
+      <div class="form-container" style="display: none;">
+        <form class="form" id="form">
+          <p>Create a note</p>
+          <div class="note-title">
+            <label for="title">Title</label>
+            <input type="text" id="note-title-input" maxlength="30" />
+          </div>
+          <div class="choose-color">
+            <label for="color">Choose note's color</label>
+            <div class="color red"></div>
+            <div class="color green"></div>
+            <div class="color blue"></div>
+            <div class="color yellow"></div>
+          </div>
+          <input class="note-text" id="note-text"> </input>
+          <div class="options" id="options-btn">
+            <button class="btn cancel-btn" id="cancel-btn">Cancel</button>
+            <button class="btn create-btn" id="create-btn">Create</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Note -->
+      <div class="page-content" id="page-content">
+       
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

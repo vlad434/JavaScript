@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+}
+
+.container {
+  background-color: rgb(0, 141, 31);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30vw;
+  height: 70%;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+
+.text {
+  font-size: 2rem;
+}
+
+input.principal {
+  border-radius: 1rem;
+  height: 3vh;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 4rem;
+  color: #000;
+}
+
+.rest-money {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-top: 1vh;
+  height: 45vh;
+}
+
+.rest-money input {
+  border-radius: 1rem;
+  width: 5rem;
+  height: 4vh;
+  font-size: 1.3vw;
+  padding: 0.5rem;
+  text-align: center;
+  color: #000;
+}
+
+.btn-convert {
+  border-radius: 1rem;
+  font-size: 1.3vw;
+  padding: 0.5rem;
+}
+
+.btn-convert:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-convert:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 780px) {
+  .container {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .text {
+    font-size: 4vw;
+  }
+}

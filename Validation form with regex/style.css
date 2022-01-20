@@ -1,0 +1,56 @@
+body,
+html {
+  background-color: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  width: 400px;
+  margin: 50px auto 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #cecece;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #cecece;
+}
+
+h1 {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+span {
+  font-family: sans-serif;
+  font-size: 12px;
+  margin-top: 5px;
+  color: red;
+}
+
+[data-validation-text] {
+  display: none;
+}
+
+/* When the input is invalid & not blank */
+input:invalid:not(:placeholder-shown) {
+  border: 2px solid red !important;
+}
+
+/* When input is invalid, show and make the adjacanet validation text red  */
+input:invalid:not(:placeholder-shown) + [data-validation-text] {
+  color: red !important;
+  display: block;
+}

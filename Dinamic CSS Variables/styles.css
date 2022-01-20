@@ -1,0 +1,25 @@
+:root {
+    --color: #2E343F;
+    --position: 0;
+    --raduius: 0;
+  }
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+label{
+  margin-right: 10px;
+
+}
+
+
+.box {
+    transform: translateX(var(--position));
+    background: var(--color);
+    border-radius: var(--radius);
+    width: 100px;
+    height: 100px;
+    transition: width 2s;
+  }

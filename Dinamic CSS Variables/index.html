@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <label for="position">Position</label>
+        <input type="range" name="position" id="position" oninput="changeValue('position', this.value)">
+
+        <label for="radius">Radius</label>
+        <input type="range" name="radius" id="radius" oninput="changeValue('radius', this.value)"> 
+
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color" oninput="changeValue('color', this.value)">
+    </div>
+
+    <div class="output">
+        <div class="box" id="box"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

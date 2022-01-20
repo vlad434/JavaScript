@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.full-screen-container {
+  background-image: url(/background.PNG);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: hsla(301, 100%, 6%, 0.6);
+  padding: 50px 30px;
+  min-width: 400px;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 15px;
+}
+
+.message {
+  min-width: 400px;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 70px;
+  color: hsla(125, 100%, 50%, 0.6);
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: white;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  margin-bottom: 7px;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  background-color: hsla(301, 100%, 6%, 0.6);
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: lighter;
+  padding: 15px;
+  font-size: 1.5rem;
+}
+
+.input-group input:focus {
+  border: 1px solid hsl(201, 100%, 50%);
+}
+
+.login {
+  background: none;
+  width: 100%;
+  border-radius: 5px;
+  background-color: hsla(201, 100%, 505, 0.1);
+  border: 1px solid hsl(201, 100%, 50%);
+  outline: none;
+  font-size: 1.5em;
+  color: white;
+  font-weight: lighter;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.login:hover {
+  background-color: hsla(201, 100%, 6%, 0.3);
+}
+
+.logout {
+  background: none;
+  width: 100%;
+  border-radius: 5px;
+  background-color: hsla(201, 100%, 505, 0.1);
+  border: 1px solid hsl(201, 100%, 50%);
+  outline: none;
+  font-size: 1.5em;
+  color: white;
+  font-weight: lighter;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: hsla(201, 100%, 6%, 0.3);
+}

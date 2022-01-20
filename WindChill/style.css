@@ -1,0 +1,129 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: rgb(175, 174, 174);
+}
+
+.container {
+  height: auto;
+  width: 60vw;
+  background-color: rgba(104, 103, 103, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.font {
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin-left: 15vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.temperature {
+  /* background-color: blue; */
+  width: 35vw;
+}
+
+.speed {
+  /* background-color: rgb(219, 12, 12); */
+  width: 36.5vw;
+}
+
+input[type='number'] {
+  height: 5vh;
+  width: 4vw;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: transparent;
+}
+
+/* Button Calculate */
+.calculate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.btn {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  padding: 10px;
+}
+.btn:hover {
+  background-color: rgba(19, 18, 18, 0.5);
+  color: white;
+}
+
+/*Outputs Container */
+.outputs {
+  width: 40vw;
+  margin-left: 10vw;
+  padding: 10px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.outputs label {
+  text-align: center;
+}
+
+.output {
+  height: 5vh;
+  width: 5vw;
+  background-color: rgb(204, 204, 204);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.temperature-output,
+.speed-output,
+.wc-output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fas {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 950px) {
+  .container {
+    height: 60vh;
+    width: 80vw;
+  }
+
+  .font {
+    width: 95%;
+    font-size: 5vw;
+    padding: 0.5rem;
+    margin-left: 0vw;
+  }
+
+  .outputs {
+    width: 95%;
+    margin-left: 0vw;
+    font-size: 1.5rem;
+  }
+
+  .output {
+    height: 4vh;
+    width: 10vw;
+  }
+
+  .fas {
+    font-size: 3rem;
+  }
+}

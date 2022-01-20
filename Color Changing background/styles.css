@@ -1,0 +1,20 @@
+body{
+	background-color: black;
+	animation-name: myAnim;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes myAnim {
+	0% 		{background-color: rgba(65,1,165,255);}
+	10% 	{background-color: rgba(2,73,249,255);}	
+	20% 	{background-color: rgba(0,150,203,255);}
+	30% 	{background-color: rgba(101,177,51,255);}
+	40% 	{background-color: rgba(209,234,44,255);}
+	50% 	{background-color: rgba(254,255,53,255);}
+	60% 	{background-color: rgba(249,188,2,255);}
+	70% 	{background-color: rgba(252,154,3,255);}
+	80% 	{background-color: rgba(253,84,9,255);}
+	90% 	{background-color: rgba(250,41,17,255);}
+	100% 	{background-color: rgba(168,24,75,255);}
+}

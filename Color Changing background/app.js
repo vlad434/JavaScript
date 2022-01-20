@@ -1,0 +1,3 @@
+body{
+    animation: myMove infinite;
+}

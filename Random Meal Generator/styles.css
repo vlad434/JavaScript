@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'Zabdilus';
+  src: url(./Zabdilus.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Zachary';
+  src: url(./Zachary.ttf) format('truetype');
+}
+
+body,
+html {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(170, 170, 170);
+}
+
+.container {
+  height: auto;
+  width: 75vw;
+  box-shadow: 0 0 5vw black;
+  background-color: rgb(192, 192, 192);
+  padding: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* FIRST MODAL CONTAINER */
+.first-modal {
+  background-color: rgb(118, 141, 143);
+  padding: 2vh;
+  border-radius: 10px;
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text_big,
+.text_small {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.meal-gen-btn {
+  padding: 1.5vh;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-family: 'Zabdilus';
+  background-color: rgb(27, 152, 163);
+}
+
+.meal-gen-btn:hover {
+  background-color: rgb(93, 188, 197);
+  box-shadow: 0 0 20px black;
+}
+
+.middle-container {
+  background-color: rgb(121, 121, 121);
+  width: 70vw;
+  margin-top: 1vh;
+  padding: 2vw;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.instructions {
+  width: 35vw;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.instructions .recipe-title {
+  text-align: center;
+  font-style: italic;
+}
+
+.recipe-text {
+  padding: 10px;
+  height: 100vh;
+  border-radius: 10px;
+  margin: 1vh;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.recipe-details {
+  width: 35vw;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.recipe-details .recipe-image {
+  height: 50vh;
+  width: 25vw;
+  border-radius: 15px;
+}
+
+.category {
+  width: 12vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.category-text {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.category-value {
+  font-weight: bold;
+  font-size: 4vh;
+}
+
+.video_of_recipe {
+  height: auto;
+  width: 70vw;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  height: 55vh;
+  width: 60vw;
+  border-radius: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.footer {
+  height: 15vh;
+  width: 95%;
+  border-radius: 15px;
+  margin-top: auto;
+  padding: 1vh;
+  font-size: 4rem;
+  text-align: center;
+  font-family: 'Zabdilus';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 950px) {
+  .first-modal {
+    font-size: 3vw;
+    width: 40vw;
+  }
+
+  .meal-gen-btn {
+    font-size: 3.5vw;
+  }
+
+  .footer {
+    height: 15vh;
+    width: 95%;
+    font-size: 7vw;
+  }
+  .middle-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .middle-container {
+    width: 70vw;
+    padding: 0vh;
+  }
+
+  .instructions {
+    width: 65vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: transparent;
+  }
+  .recipe-text {
+    padding: 10px;
+    height: auto;
+  }
+  .recipe-details {
+    width: 65vw;
+  }
+
+  .recipe-details .recipe-image {
+    height: 40vh;
+    width: 60vw;
+    border-radius: 25px;
+  }
+
+  .category {
+    width: 60vw;
+    font-size: 3.5vw;
+  }
+}

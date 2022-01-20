@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator-container">
+      <div class="output" id="output"></div>
+
+      <div class="numbers-container">
+        <div class="first-row" id="all">
+          <button class="up clear" id="clear">AC</button>
+          <button class="up delete" id="delete">¬</button>
+          <button class="up percent" id="percent">%</button>
+          <button class="up divide" id="divide">/</button>
+        </div>
+
+        <div class="second-row" id="all">
+          <button class="number" id="number7">7</button>
+          <button class="number" id="number8">8</button>
+          <button class="number" id="number9">9</button>
+          <button class="operation" id="multiply">*</button>
+        </div>
+
+        <div class="third-row" id="all">
+          <button class="number" id="number">4</button>
+          <button class="number" id="number">5</button>
+          <button class="number" id="number">6</button>
+          <button class="operation" id="minus">-</button>
+        </div>
+
+        <div class="fourth-row" id="all">
+          <button class="number" id="number">1</button>
+          <button class="number" id="number">2</button>
+          <button class="number" id="number">3</button>
+          <button class="operation" id="add">+</button>
+        </div>
+
+        <div class="final-row">
+          <button class="number zero" id="number">0</button>
+          <button class="operation" id="dot">.</button>
+          <button class="operation" id="equals">=</button>
+        </div>
+
+        <div class="down-button"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

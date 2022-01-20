@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="search-container">
+      <input
+        type="text"
+        id="city_input"
+        placeholder="Search for a city"
+        class="city"
+      />
+      <button class="btn" id="btn" value="Search">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <div class="container hide" id="container">
+      <div class="left-side">
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div class="city-name" id="city-name">City</div>
+          <div class="city-dept" id="city-dept">Depts</div>
+        </div>
+        <div style="display: flex">
+          <div class="degrees" id="degrees">5</div>
+          <label for="degrees" style="font-size: 1.5rem">&#176;C</label>
+        </div>
+      </div>
+      <div class="day_night" id="day_night"></div>
+      <div class="right-side">
+        <div class="weather-condition" id="weather-condition">Weather</div>
+      </div>
+    </div>
+    <script src="forecast.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pomodoro Clock</title>
+  </head>
+  <body>
+    <div class="clock-container">
+      <div class="title up">POMODORO CLOCK</div>
+      <div class="container">
+        <div class="set-time">
+          <label for="break" class="label">BREAK LENGTH</label>
+          <div class="btn-up">
+            <i class="fas fa-minus-circle" id="minus-break"></i>
+            <p class="num-break">5</p>
+            <i class="fas fa-plus-circle" id="plus-break"></i>
+          </div>
+        </div>
+        <div class="set-time">
+          <label for="session" class="label">SESSION LENGTH</label>
+          <div class="btn-up">
+            <i class="fas fa-minus-circle" id="minus-session"></i>
+            <p class="num-session">25</p>
+            <i class="fas fa-plus-circle" id="plus-session"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="clock-session" style="display: flex">
+        <div id="title">SESSION</div>
+        <div class="clock">
+          <p id="work-min">25</p>
+          <p class="semicolon">:</p>
+          <p id="work-sec">00</p>
+        </div>
+        <div class="btn-down">
+          <i class="fas fa-play-circle"></i>
+          <i class="fas fa-pause-circle"></i>
+          <i class="fas fa-undo"></i>
+        </div>
+      </div>
+
+      <div class="break-session" style="display: none">
+        <div id="title">BREAK</div>
+        <div class="clock">
+          <p id="break-min">05</p>
+          <p class="semicolon">:</p>
+          <p id="break-sec">00</p>
+        </div>
+        <div class="btn-down" style="padding-left: 8vh">
+          <i class="fas fa-play-circle" id="break-play"></i>
+        </div>
+      </div>
+
+      <div class="replay-session" style="display: none">
+        <div id="title-replay">Break done! Replay?</div>
+        <i class="fas fa-reply-all" id="reset-all-btn"></i>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

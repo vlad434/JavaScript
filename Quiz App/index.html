@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icon.png" />
+    <title>Quiz App?!</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Button -->
+      <button class="start-btn" id="start-btn">Start Quiz</button>
+
+      <!-- Game Rules -->
+      <div class="info hidden">
+        <h1 class="rules">Rules</h1>
+        <hr />
+        <div class="text-rules">
+          <div class="rule">
+            You will have only <span><strong>15 seconds</strong></span> per each
+            question.
+          </div>
+          <div class="rule">
+            Once you select your answer, it can't be undone.
+          </div>
+          <div class="rule">
+            You can't select any option once time goes off.
+          </div>
+          <div class="rule">
+            You'll get points on the basis of your correct answers.
+          </div>
+        </div>
+        <hr />
+        <div class="controls">
+          <button class="exit-btn btn" id="exit-btn">Exit Quiz</button>
+          <button class="continue-btn btn" id="continue-btn">Continue</button>
+        </div>
+      </div>
+
+      <!-- Question Container -->
+      <div class="que-container hidden">
+        <header>
+          <p class="que-title">Quiz Application</p>
+          <div class="time-container">
+            <p class="time-text">Time Left</p>
+            <span class="time-left">15</span>
+          </div>
+        </header>
+
+        <div class="que-content">
+          <div class="que-text">
+            <span class="que-name" id="que-name"> </span>
+          </div>
+          <div class="option-list">
+            <!-- <div class="option">Hyper ceva</div>
+            <div class="option">hyper altceva</div>
+            <div class="option">hugasd</div>
+            <div class="option">asdahsdjk</div> -->
+          </div>
+        </div>
+        <hr />
+        <footer class="que-footer">
+          <div class="que-num">
+            <!-- <span
+                ><p>2</p>
+                of
+                <p>5</p>
+                Questions</span
+              > -->
+          </div>
+          <div>
+            <button class="next-que btn" id="next-que">Next Que</button>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Result Container -->
+      <div class="res-container hidden">
+        <div class="icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete-text">You've completed the Quiz!</div>
+        <div class="score-text">
+          <!-- <span
+            >and sorry, You got only
+            <p>2</p>
+            out of
+            <p>5</p></span
+          > -->
+        </div>
+        <div class="buttons">
+          <div class="replay-btn btn">Replay Quiz</div>
+        </div>
+      </div>
+    </div>
+    <script defer src="questions.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>

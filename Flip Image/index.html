@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="" />
+    <title>Flip Image</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1642425149665-614cf4bc8749?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="image"
+          id="img"
+        />
+        <i class="fas fa-chevron-up" id="up"></i>
+        <i class="fas fa-chevron-left" id="left"></i>
+        <i class="fas fa-chevron-down" id="down"></i>
+        <i class="fas fa-chevron-right" id="right"></i>
+      </div>
+
+      <div class="upload">
+        <p>
+          If you don't like our image, you can change it! <br />
+          Please put the url of your image in the box below.
+        </p>
+        <div class="btn">
+          <button class="display-btn" id="display-btn">Display</button>
+          <input
+            type="text"
+            id="upload-input"
+            placeholder="Insert your image URL here"
+          />
+        </div>
+      </div>
+
+      <div class="error-box" id="error-box">
+        <p>Please insert the URL!</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

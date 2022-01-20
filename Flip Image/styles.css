@@ -1,0 +1,155 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+}
+
+.container {
+  height: 100%;
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.image-container {
+  height: 50vh;
+  width: 35vw;
+  position: relative;
+}
+
+.img {
+  height: 50vh;
+  width: 35vw;
+  border-radius: 1em;
+}
+
+.fas {
+  position: absolute;
+  font-size: 3vw;
+  display: none;
+}
+
+.image-container:hover > .fas {
+  display: block;
+}
+
+.fas:hover {
+  color: white;
+}
+
+.fa-chevron-up {
+  top: 0;
+  left: 50%;
+}
+
+.fa-chevron-down {
+  bottom: 0;
+  left: 50%;
+}
+
+.fa-chevron-left {
+  left: 0;
+  top: 50%;
+}
+
+.fa-chevron-right {
+  right: 0;
+  top: 50%;
+}
+
+.upload {
+  width: 40vw;
+  background-color: rgba(129, 118, 53, 0.3);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin-top: 2.4em;
+}
+
+.upload p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn input {
+  width: 25vw;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.btn button {
+  width: 7.5vw;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.error-box {
+  background-color: rgba(163, 28, 28, 0.6);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 1em;
+  transition: 1s;
+  opacity: 0;
+}
+
+@media (max-width: 950px) {
+  .image-container {
+    height: 35vh;
+    width: 60vw;
+  }
+
+  .img {
+    height: 35vh;
+    width: 60vw;
+    border-radius: 1em;
+  }
+  .upload {
+    width: 80vw;
+  }
+
+  .btn input {
+    width: 45vw;
+  }
+
+  .btn button {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 500px) {
+  .image-container {
+    height: 35vh;
+    width: 45vw;
+  }
+
+  .img {
+    height: 35vh;
+    width: 45vw;
+    border-radius: 1em;
+  }
+  .upload {
+    width: 60vw;
+  }
+
+  .btn input {
+    width: 35vw;
+  }
+
+  .btn button {
+    width: 14vw;
+  }
+}

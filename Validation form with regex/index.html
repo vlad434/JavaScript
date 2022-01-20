@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Validation Form</title>
+  </head>
+  <body>
+    <form>
+      <h1>Native form validation with CSS & Regex</h1>
+
+      <label>Name</label>
+      <input type="text" pattern=".{5,}" />
+      <span data-validation-text>Must be 5 chars or more</span>
+
+      <label>Email</label>
+      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" />
+      <span data-validation-text>Must be a valid email</span>
+
+      <label>Phone</label>
+      <input type="text" pattern="([0-9]|\s){2,}" />
+      <span data-validation-text
+        >Must be 2 chars or more, only numbers and spaces allowed</span
+      >
+    </form>
+  </body>
+</html>

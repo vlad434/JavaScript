@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" type="image/png" href="icon.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CountDown Timer</title>
+  </head>
+  <body>
+    <div class="full-screen-container">
+      <!-- Modal -->
+      <div class="modal" style="display: none">
+        <form class="modal" id="modal">
+          <label for="event-title">What's your event's name?</label>
+          <input type="text" maxlength="30" class="box" id="event-title" />
+          <input type="date" name="calendar" class="box" id="calendar" />
+          <input type="time" name="time" class="box" id="time" />
+
+          <div>
+            <i class="fa fa-times-circle"></i>
+            <i class="fa fa-check-circle"></i>
+          </div>
+        </form>
+      </div>
+
+      <!-- countdown timer -->
+      <div id="countdown" class="countdown-container">
+        <div class="element-container">
+          <p class="num" id="days">D</p>
+          <span>days</span>
+        </div>
+
+        <div class="element-container">
+          <p class="num" id="hours">O</p>
+          <span>hours</span>
+        </div>
+
+        <div class="element-container">
+          <p class="num" id="minutes">N</p>
+          <span>minutes</span>
+        </div>
+
+        <div class="element-container">
+          <p class="num" id="seconds">E</p>
+          <span>seconds</span>
+        </div>
+      </div>
+
+      <div class="messageText" id="messageText" style="display: block">
+        Your deadline's name is here
+      </div>
+
+      <!-- add button -->
+      <div class="add-event" id="add-btn">
+        <i class="fa fa-plus-square" onchange="calcTime(this.value)"></i>
+      </div>
+    </div>
+
+    <div class="modal-container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
