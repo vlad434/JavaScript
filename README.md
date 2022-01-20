@@ -25,5 +25,7 @@
 19 | [Random Number Generator](https://github.com/vlad434/JavaScript/tree/master/Random%20Number%20Generator) | https://random-number-generator-snowy.vercel.app/ | in progress..  | 
 20 | [Slider](https://github.com/vlad434/JavaScript/tree/master/Slider) | https://slider-zeta.vercel.app/ | in progress..  | 
 21 | [StopWatch](https://github.com/vlad434/JavaScript/tree/master/StopWatch) |  https://stop-watch-ashen.vercel.app/ | in progress..  | 
-22 | [Weather App](https://github.com/vlad434/JavaScript/tree/master/Weather%20App) | https://weather-app-one-mauve.vercel.app/ | in progress..  | 
-23 | [Wind Chill](https://github.com/vlad434/JavaScript/tree/master/WindChill) | https://windchill-calculator.vercel.app/ | Done  |  
+22 | [Validadtion form with regex](https://github.com/vlad434/JavaScript-Projects/tree/master/Validation%20form%20with%20regex) |  in progress..  |  
+23 | [Weather App](https://github.com/vlad434/JavaScript/tree/master/Weather%20App) | https://weather-app-one-mauve.vercel.app/ | in progress..  | 
+24 | [Wind Chill](https://github.com/vlad434/JavaScript/tree/master/WindChill) | https://windchill-calculator.vercel.app/ | Done  |  
+
