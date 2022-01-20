@@ -2,7 +2,7 @@
 
 
 
-ID| Name  |  Live Demo | Status |
+#| Name  |  Live Demo | Status |
 ---- | ------------- | ------------- |------------- |
 01 | [Bin2Dec](https://github.com/vlad434/JavaScript/tree/master/Bin2Dec) | https://binary-to-decimal-converter-black.vercel.app/ | Done  |
 02 | [Border Radius Previewer](https://github.com/vlad434/JavaScript/tree/master/Border-radius%20Previewer) | https://border-radius-previewer-tawny.vercel.app/  | in progress..  |
