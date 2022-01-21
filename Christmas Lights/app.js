@@ -1,30 +1,53 @@
 const onBtn = document.getElementById('on-btn');
 const offBtn = document.getElementById('off-btn');
-const speed = document.querySelector('input[type="number"]');
+const firstSec = document.getElementById('1s');
+const secondSec = document.getElementById('2s');
+const thirdSec = document.getElementById('3s');
+const fourthSec = document.getElementById('4s');
+const fifthSec = document.getElementById('5s');
 
 const circle = document.getElementsByClassName('circle');
 var len = circle.length;
 
-function turnOff() {
+firstSec.addEventListener('click', () => {
   for (var i = 0; i < len; i++) {
-    circle[i].style.backgroundColor = 'rgb(114, 1, 105)';
-    circle[i].style.animation = 'none';
+    circle[i].style.animationDuration = '1s';
   }
-}
+});
+secondSec.addEventListener('click', () => {
+  for (var i = 0; i < len; i++) {
+    circle[i].style.animationDuration = '2s';
+  }
+});
+thirdSec.addEventListener('click', () => {
+  for (var i = 0; i < len; i++) {
+    circle[i].style.animationDuration = '3s';
+  }
+});
 
-function turnOn() {
+fourthSec.addEventListener('click', () => {
+  for (var i = 0; i < len; i++) {
+    circle[i].style.animationDuration = '4s';
+  }
+});
+
+fifthSec.addEventListener('click', () => {
+  for (var i = 0; i < len; i++) {
+    circle[i].style.animationDuration = '5s';
+  }
+});
+
+onBtn.addEventListener('click', () => {
   for (var i = 0; i < len; i++) {
     circle[i].removeAttribute('style');
+    circle[i].style.transitionDuration = '.5s';
   }
-}
+});
 
-function increaseSpeed() {
-  var speed = document.getElementById('input').value;
+offBtn.addEventListener('click', () => {
   for (var i = 0; i < len; i++) {
-    circle[i].style.animationDuration = speed + 's';
+    circle[i].style.backgroundColor = 'rgb(114, 1, 105)';
+    circle[i].style.transitionDuration = '.5s';
+    circle[i].style.animation = 'none';
   }
-}
-
-onBtn.addEventListener('click', turnOn);
-offBtn.addEventListener('click', turnOff);
-speed.addEventListener('input', increaseSpeed);
+});
