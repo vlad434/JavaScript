@@ -1,41 +1,39 @@
-body{
-  background-image: url('/img/background.gif'); 
+body {
+  background-color: rgb(95, 95, 134);
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgb(7, 182, 182); */
-  margin-top: 50px;
+  overflow: hidden;
 }
 
-.copy-btn{
-  height: 50px;
+.copy-btn {
+  height: 55px;
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   font-size: 20px;
 }
 
-
-.text-container{ 
+.text-container {
   text-align: center;
-  font-size: 20px;
+  font-size: 17px;
   width: 280px;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
 }
 
-.image-container{
+.image-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 350px;
   width: 350px;
-  background-color: rgb(7, 182, 182);
+  /* background-color: rgb(7, 182, 182); */
   border-style: dashed;
   border-color: black;
 }
 
-.image-box{
+.image-box {
   background-position-x: center;
   background-position-y: center;
   background-size: cover;
@@ -43,7 +41,7 @@ body{
   height: 350px;
 }
 
-.sliders-container{
+.sliders-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,14 +51,36 @@ body{
   width: 315px;
 }
 
-input{
+input {
   margin-top: 20px;
 }
 
-.copy-btn:hover{ 
+.copy-btn:hover {
   background-color: rgb(173, 173, 173);
-  transition: .5s;
+  transition: 0.5s;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 15vh;
+}
 
- 
+.btn input {
+  width: 65%;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.display-btn {
+  font-size: 1.5vw;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.display-btn:hover {
+  background-color: grey;
+  color: white;
+}
