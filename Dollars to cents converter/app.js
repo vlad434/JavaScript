@@ -1,6 +1,12 @@
 const coins = document.querySelectorAll('.coin');
 document.querySelector('.btn-convert').addEventListener('click', Convert);
 const errorEl = document.querySelector('.error-message');
+document.getElementById('quarters').disabled = true;
+document.getElementById('dimes').disabled = true;
+document.getElementById('nickels').disabled = true;
+document.getElementById('pennies').disabled = true;
+document.getElementById('total-cents').disabled = true;
+
 function Convert(e) {
   let number = document.getElementById('number').value;
   let totalCents = document.getElementById('total-cents');
@@ -9,7 +15,7 @@ function Convert(e) {
   let nickels = document.getElementById('nickels');
   let pennies = document.getElementById('pennies');
 
-  if (number === '' || number === 0) {
+  if (number === '' || number == '0') {
     totalCents.value = '';
     quarters.value = '';
     dimes.value = '';
@@ -32,13 +38,14 @@ function Convert(e) {
       dimes.value * 10 -
       nickels.value * 5;
 
-    // coins.forEach((coin) => {
-    //   if (coin) {
-    //     coin.setAttribute('class', 'coin animate-heads');
-    //   } else {
-    //     coin.setAttribute('class', 'coin animate-tails');
-    //   }
-    // });
+    for (let i = 0; i < coins.length; i++) {
+      coins[i].animate(
+        [{ transform: 'rotateY(0deg)' }, { transform: 'rotateY(360deg)' }],
+        {
+          duration: 2000,
+        }
+      );
+    }
   }
 
   e.preventDefault();

@@ -20,12 +20,10 @@ body {
   flex-direction: column;
 }
 
-/* .upper-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
+.text {
+  font-size: 2vw;
+  color: #fff;
+}
 
 .text2 {
   color: #fff;
@@ -48,8 +46,7 @@ input.principal {
   height: 3vh;
   font-size: 1rem;
   padding: 0.5rem;
-  text-align: center;
-  width: 4rem;
+  width: 6vw;
   color: #000;
 }
 
@@ -68,10 +65,12 @@ input.principal {
   border-radius: 1rem;
   width: 5vw;
   height: 4vh;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   padding: 0.5rem;
   text-align: center;
   color: #000;
+  background-color: transparent;
+  border: none;
 }
 
 .btn-convert {
@@ -137,32 +136,31 @@ input.principal {
 }
 
 .animate-heads {
-  animation: flipHeads 2s;
+  animation: flipHeads 3s;
   animation-fill-mode: forwards;
 }
-
 @keyframes flipHeads {
   from {
     transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(1080deg);
+    transform: rotateY(0deg);
   }
 }
 
-/* .animate-tails {
-  animation: flipTails 2s;
+.animate-tails {
   animation-fill-mode: forwards;
-} */
+  animation: flipHeads 3s;
+}
 
-/* @keyframes flipTails {
+@keyframes flipTails {
   from {
     transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(1080deg);
+    transform: rotateY(180deg);
   }
-} */
+}
 
 .heads-quarters {
   background-image: url('quarter.jpg');
@@ -202,4 +200,93 @@ input.principal {
 .tails-pennies {
   background-image: url('penny-back.jpg');
   background-size: contain;
+}
+
+@media (max-width: 1110px) {
+  .text {
+    font-size: 3.5vw;
+  }
+  .error-message {
+    height: 9vh;
+    font-size: 4vw;
+  }
+
+  .btn-convert {
+    font-size: 2vw;
+  }
+
+  input.principal {
+    border-radius: 1rem;
+    height: 4vh;
+    font-size: 2vw;
+    padding: 0rem;
+    color: #000;
+  }
+
+  .upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  input.principal {
+    font-size: 1.5vw;
+    padding: 0rem;
+    text-align: center;
+    width: 5vw;
+    color: #000;
+  }
+
+  .rest-money input {
+    width: 7vw;
+    font-size: 3vw;
+    margin-top: 2vh;
+    text-align: center;
+    color: rgb(212, 211, 211);
+    background-color: transparent;
+    border: none;
+  }
+}
+
+@media (max-width: 781px) {
+  .text {
+    font-size: 3vw;
+  }
+  .error-message {
+    height: 9vh;
+    font-size: 4vw;
+  }
+
+  .btn-convert {
+    font-size: 2vw;
+  }
+
+  input.principal {
+    border-radius: 1rem;
+    height: 3vh;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 15vw;
+    color: #000;
+  }
+
+  .rest-money input {
+    width: 9vw;
+  }
+
+  .coin {
+    width: 5.5rem;
+    height: 5.5rem;
+    transform-style: preserve-3d;
+  }
+  .rest-money input {
+    width: 9vw;
+    font-size: 5vw;
+    margin-top: 2vh;
+    text-align: center;
+    color: rgb(212, 211, 211);
+    background-color: transparent;
+    border: none;
+  }
 }
