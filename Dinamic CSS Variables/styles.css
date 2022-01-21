@@ -1,25 +1,37 @@
 :root {
-    --color: #2E343F;
-    --position: 0;
-    --raduius: 0;
-  }
-
-.container{
-    display: flex;
-    align-items: center;
+  --color: #2e343f;
+  --position: 0;
+  --raduius: 0;
 }
 
-label{
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75vh;
+  line-height: 6vh;
+  background-color: rgb(245, 225, 116);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5vw;
+  align-items: center;
+}
+
+label {
   margin-right: 10px;
-
 }
-
 
 .box {
-    transform: translateX(var(--position));
-    background: var(--color);
-    border-radius: var(--radius);
-    width: 100px;
-    height: 100px;
-    transition: width 2s;
-  }
+  transform: translateX(var(--position));
+  background: var(--color);
+  border-radius: var(--radius);
+  width: 100px;
+  height: 100px;
+  transition: width 2s;
+  margin-top: 5vh;
+}
