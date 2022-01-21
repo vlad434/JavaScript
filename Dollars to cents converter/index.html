@@ -9,23 +9,56 @@
   </head>
   <body>
     <div class="container">
-      <span class="text">Dollars Input</span>
-      <input type="number" id="number" class="principal" />
-      <button class="btn-convert">Convert</button>
-      <span class="text">Total cents</span>
-      <input type="number" class="principal" id="total-cents" />
+      <div class="upper-container">
+        <span class="text">Dollars Input</span>
+        <input type="number" id="number" class="principal" />
+        <button class="btn-convert">Convert</button>
+        <span class="text">Total cents</span>
+        <input
+          type="number"
+          class="principal"
+          id="total-cents"
+          disabled="true"
+        />
+      </div>
+
       <div class="rest-money">
-        <span class="text2">Quarters (25¢)</span>
-        <input type="number" id="quarters" />
+        <div class="quarters-container">
+          <span class="text2">Quarters (25¢)</span>
+          <div class="coin animate-tails">
+            <div class="heads heads-quarters"></div>
+            <div class="tails tails-quarters"></div>
+          </div>
 
-        <span class="text2">Dimes (10¢)</span>
-        <input type="number" id="dimes" />
+          <input type="number" id="quarters" disabled="true" />
+        </div>
 
-        <span class="text2">Nickels (5¢)</span>
-        <input type="number" id="nickels" />
+        <div class="dimes-container">
+          <span class="text2">Dimes (10¢)</span>
+          <div class="coin animate-tails">
+            <div class="heads heads-dimes"></div>
+            <div class="tails tails-dimes"></div>
+          </div>
+          <input type="number" id="dimes" disabled="true" />
+        </div>
 
-        <span class="text2">Pennies (1¢)</span>
-        <input type="number" id="pennies" />
+        <div class="nickels-container">
+          <span class="text2">Nickels (5¢)</span>
+          <div class="coin animate-tails">
+            <div class="heads heads-nickels"></div>
+            <div class="tails tails-nickels"></div>
+          </div>
+          <input type="number" id="nickels" disabled="true" />
+        </div>
+
+        <div class="pennies-container">
+          <span class="text2">Pennies (1¢)</span>
+          <div class="coin animate-tails">
+            <div class="heads heads-pennies"></div>
+            <div class="tails tails-pennies"></div>
+          </div>
+          <input type="number" id="pennies" disabled="true" />
+        </div>
       </div>
     </div>
 
