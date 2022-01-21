@@ -190,6 +190,60 @@ body {
   }
 }
 
+@media (max-width: 860px) {
+  .bulb-lights-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 35vh;
+    padding: 10px;
+  }
+
+  .little-box {
+    height: 20px;
+    width: 15px;
+    margin-left: 45px;
+    background-color: black;
+  }
+
+  .circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .bulb-lights-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 35vh;
+    padding: 10px;
+  }
+
+  .little-box {
+    height: 15px;
+    width: 12px;
+    margin-left: 32px;
+    background-color: black;
+  }
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+
+  .btn {
+    font-size: 2vw;
+    height: 35px;
+    width: 35px;
+  }
+}
+
 @media (max-width: 430px) {
   .container {
     display: none;
