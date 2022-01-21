@@ -87,3 +87,23 @@ span {
   font-size: 30px;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .num {
+    color: white;
+    font-size: 5vw;
+  }
+
+  span {
+    color: white;
+    font-size: 3.5vw;
+  }
+
+  .messageText {
+    font-size: 4vw;
+  }
+
+  .fa-plus-square {
+    font-size: 7vw;
+  }
+}
