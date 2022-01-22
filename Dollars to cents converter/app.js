@@ -6,7 +6,7 @@ document.getElementById('dimes').disabled = true;
 document.getElementById('nickels').disabled = true;
 document.getElementById('pennies').disabled = true;
 document.getElementById('total-cents').disabled = true;
-
+document.getElementById('number').focus();
 function Convert(e) {
   let number = document.getElementById('number').value;
   let totalCents = document.getElementById('total-cents');
