@@ -163,42 +163,42 @@ input.principal {
 }
 
 .heads-quarters {
-  background-image: url('quarter.jpg');
+  background-image: url('images/quarter.jpg');
   background-size: contain;
 }
 
 .heads-dimes {
-  background-image: url('dime.png');
+  background-image: url('images/dime.png');
   background-size: contain;
 }
 
 .heads-nickels {
-  background-image: url('nickel.jpg');
+  background-image: url('images/nickel.jpg');
   background-size: contain;
 }
 
 .heads-pennies {
-  background-image: url('pennies.png');
+  background-image: url('images/pennies.png');
   background-size: contain;
 }
 
 .tails-quarters {
-  background-image: url('quarter-back.jpg');
+  background-image: url('images/quarter-back.jpg');
   background-size: contain;
 }
 
 .tails-dimes {
-  background-image: url('dime-back.png');
+  background-image: url('images/dime-back.png');
   background-size: contain;
 }
 
 .tails-nickels {
-  background-image: url('nickel-back.jpg');
+  background-image: url('images/nickel-back.jpg');
   background-size: contain;
 }
 
 .tails-pennies {
-  background-image: url('penny-back.jpg');
+  background-image: url('images/penny-back.jpg');
   background-size: contain;
 }
 
