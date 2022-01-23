@@ -9,24 +9,23 @@ body {
 }
 
 .container {
-  height: 100%;
-  width: 75vw;
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 25px;
 }
 
 .image-container {
-  height: 50vh;
-  width: 35vw;
+  height: 46vh;
+  width: 30vw;
   position: relative;
 }
 
 .img {
   height: 50vh;
-  width: 35vw;
+  width: 30vw;
   border-radius: 1em;
 }
 
@@ -106,19 +105,21 @@ body {
   opacity: 0;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1350px) {
   .image-container {
-    height: 35vh;
-    width: 60vw;
+    height: 45vh;
+    width: 66vw;
   }
 
   .img {
-    height: 35vh;
-    width: 60vw;
+    height: 45vh;
+    width: 66vw;
     border-radius: 1em;
   }
   .upload {
-    width: 80vw;
+    width: 75vw;
+    font-size: 3vw;
+    text-align: center;
   }
 
   .btn input {
@@ -128,28 +129,106 @@ body {
   .btn button {
     width: 20vw;
   }
+  .fas {
+    position: absolute;
+    font-size: 4vw;
+    display: none;
+  }
 }
 
-@media (max-width: 950px) and (min-width: 500px) {
+@media (max-width: 900px) {
   .image-container {
-    height: 35vh;
-    width: 45vw;
+    height: 40vh;
+    width: 62vw;
   }
 
   .img {
-    height: 35vh;
-    width: 45vw;
+    height: 40vh;
+    width: 62vw;
     border-radius: 1em;
   }
   .upload {
-    width: 60vw;
+    width: 70vw;
+    font-size: 3vw;
+    text-align: center;
   }
 
   .btn input {
-    width: 35vw;
+    width: 50vw;
   }
 
   .btn button {
-    width: 14vw;
+    width: 15vw;
+  }
+
+  .fas {
+    position: absolute;
+    font-size: 5.5vw;
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .image-container {
+    height: 50vh;
+    width: 60vw;
+  }
+
+  .img {
+    height: 50vh;
+    width: 60vw;
+    border-radius: 1em;
+  }
+  .upload {
+    width: 70vw;
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .btn input {
+    width: 65vw;
+  }
+
+  .btn button {
+    width: 20vw;
+  }
+
+  .fas {
+    position: absolute;
+    font-size: 6vw;
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-container {
+    height: 30vh;
+    width: 65vw;
+  }
+
+  .img {
+    height: 30vh;
+    width: 65vw;
+    border-radius: 1em;
+  }
+  .upload {
+    width: 75vw;
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .btn input {
+    width: 45vw;
+    font-size: 3.5vw;
+  }
+
+  .btn button {
+    width: 15vw;
+    font-size: 3.5vw;
+  }
+  .fas {
+    position: absolute;
+    font-size: 7vw;
+    display: none;
   }
 }
