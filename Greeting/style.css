@@ -10,7 +10,7 @@ body {
 }
 
 .full-screen-container {
-  background-image: url(/background.PNG);
+  background-image: url('background.PNG');
   height: 100vh;
   width: 100vw;
   background-size: cover;

@@ -19,12 +19,20 @@ async function greet(user) {
   let response = await fetch(`https://fourtonfish.com/hellosalut/?ip=${ip}`);
   let data = await response.json();
   message.textContent = `${data.hello} ${user}, you have successfully logged in!`;
+  setTimeout(() => {
+    message.textContent = '';
+  }, 2000);
 }
 
 form.addEventListener('submit', (e) => {
   if (loginBtn.classList.contains('login')) {
-    if (nameField.value === '' || passField.value === '') {
-      if (nameField.value === '') {
+    if (
+      nameField.value === '' ||
+      nameField.value === ' ' ||
+      passField.value === '' ||
+      nameField.value === ' '
+    ) {
+      if (nameField.value === '' || nameField.value === ' ') {
         nameField.style.boxShadow = '0 0 0 3px red';
         nameField.style.backgroundColor = 'hsla(9, 86%, 31%, 0.829)';
         message.textContent = 'Please fill the content';
@@ -37,7 +45,7 @@ form.addEventListener('submit', (e) => {
         }, 1000);
       }
 
-      if (passField.value === '') {
+      if (passField.value === '' || nameField.value === ' ') {
         passField.style.boxShadow = '0 0 0 3px red';
         passField.style.backgroundColor = 'hsla(9, 86%, 31%, 0.829)';
         message.textContent = 'Please fill the content';
