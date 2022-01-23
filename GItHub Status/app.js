@@ -1,4 +1,11 @@
+const spinner = document.querySelector('.spinner');
+
 async function request() {
+  spinner.style.display = 'flex';
+  setTimeout(() => {
+    spinner.style.display = 'none';
+  }, 500);
+
   const response = await fetch(
     'https://www.githubstatus.com/api/v2/summary.json'
   ).catch((err) => {
@@ -84,5 +91,3 @@ async function createElements(stats) {
 }
 
 document.getElementById('refresh').addEventListener('click', request);
-
-// window.onload = request();

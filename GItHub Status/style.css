@@ -111,3 +111,87 @@ body {
 .first-half {
   width: 75%;
 }
+
+.spinner {
+  width: 300px;
+  height: 300px;
+  margin-top: 40%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-section {
+  position: absolute;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  border: 15px solid transparent;
+  mix-blend-mode: overlay;
+}
+
+.spinner-section-red {
+  animation: rotate 2s ease infinite;
+  border-top: 15px solid rgb(137, 255, 137);
+}
+
+.spinner-section-blue {
+  animation: rotate 2s ease-in-out infinite;
+  border-top: 15px solid rgb(13, 197, 13);
+}
+
+.spinner-section-green {
+  animation: rotate 1s ease infinite;
+  border-top: 15px solid rgb(3, 73, 3);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes text {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.spinner-text {
+  animation: text 3s ease-out infinite;
+  font-size: 2em;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 85vw;
+  }
+  .container {
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.144);
+    width: 85vw;
+    height: 60.5%;
+  }
+
+  .status-name {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+}
