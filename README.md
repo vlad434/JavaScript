@@ -12,7 +12,7 @@
 06 | [Color changing background](https://github.com/vlad434/JavaScript/tree/master/Color%20Changing%20background)  | https://vlad434-color-changing-background.netlify.app/ | in progress..  | 
 07 | [Count Down Timer](https://github.com/vlad434/JavaScript/tree/master/Count%20down%20Timer) |  https://vlad434-count-down-timer.netlify.app  | in progress..  |
 08 | [Dynamic CSS Variables](https://github.com/vlad434/JavaScript/tree/master/Dinamic%20CSS%20Variables) | https://vlad434-dynamic-css-variables.netlify.app | in progress..  |
-09 | [Dollars to Cents Converter](https://github.com/vlad434/JavaScript/tree/master/Dollars%20to%20cents%20converter) | https://vlad434-dollar-to-cents-converter.netlify.app/ | in progress..  |  
+09 | [Dollars to Cents Converter](https://github.com/vlad434/JavaScript/tree/master/Dollars%20to%20cents%20converter) | https://vlad434-dollar-to-cents-converter.netlify.app | in progress..  |  
 10 | [Flip Image](https://github.com/vlad434/JavaScript/tree/master/Dollars%20to%20cents%20converter) | https://vlad434-flip-image.netlify.app | in progress..  |  
 11 | [GitHub Status](https://github.com/vlad434/JavaScript/tree/master/GItHub%20Status) | https://vlad434-github-status.netlify.app/ | in progress..  |
 12 | [Greeting](https://github.com/vlad434/JavaScript/tree/master/Greeting) | https://vlad434-greeting.netlify.app/ | in progress..  | 
