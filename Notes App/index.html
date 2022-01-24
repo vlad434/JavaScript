@@ -4,49 +4,92 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Notes App</title>
   </head>
   <body>
-    <div class="container">
-      <!-- Navigation bar -->
+    <!-- <div>You have some notes? Put them 
+      <button type="button">here</button>
+    </div> -->
+    <div class="add-form" id="add-form">
       <div class="navbar">
-        <p class="title">MyNotes</p>
-        <div class="add-btn">
-          <button id="add-btn">
-            <i class="fa fa-plus-circle"></i>
-          </button>
+        <button class="dots"><i class="fas fa-ellipsis-h"></i></button>
+        <button class="close-btn" id="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <textarea
+        class="input-area"
+        id="input-area"
+        cols="25"
+        rows="10"
+        placeholder="Take a note"
+      ></textarea>
+      <div class="down-controls">
+        <button class="control-btn"><i class="fas fa-bold"></i></button>
+        <button class="control-btn"><i class="fas fa-italic"></i></button>
+        <button class="control-btn"><i class="fas fa-underline"></i></button>
+        <button class="control-btn">
+          <i class="fas fa-strikethrough"></i>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="up">
+        <button class="add" id="add">Add</button>
+      </div>
+      <div class="notes-container">
+        <div class="note">
+          <button class="three-dots">...</button>
+          text <br />
+          text <br />
+          text
         </div>
-      </div>
-
-      <!-- ADD FORM -->
-      <div class="form-container" style="display: none;">
-        <form class="form" id="form">
-          <p>Create a note</p>
-          <div class="note-title">
-            <label for="title">Title</label>
-            <input type="text" id="note-title-input" maxlength="30" />
-          </div>
-          <div class="choose-color">
-            <label for="color">Choose note's color</label>
-            <div class="color red"></div>
-            <div class="color green"></div>
-            <div class="color blue"></div>
-            <div class="color yellow"></div>
-          </div>
-          <input class="note-text" id="note-text"> </input>
-          <div class="options" id="options-btn">
-            <button class="btn cancel-btn" id="cancel-btn">Cancel</button>
-            <button class="btn create-btn" id="create-btn">Create</button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Note -->
-      <div class="page-content" id="page-content">
-       
       </div>
     </div>
     <script src="app.js"></script>
   </body>
 </html>
+
+<!-- Navigation bar
+<div class="navbar">
+  <div class="title">MyNotes</div>
+  <button class="add-btn" id="add-btn">
+    <i class="fa fa-plus-circle"></i>
+  </button>
+</div>
+
+<div class="form-container" style="display: none">
+  <form class="form" id="form">
+    <p>Create a note</p>
+    <div class="note-title">
+      <label for="title">Title</label>
+      <input type="text" id="note-title-input" maxlength="30" />
+    </div>
+
+    <textarea class="note-text" id="note-text"> </textarea>
+    <div class="options" id="options-btn">
+      <button class="btn cancel-btn" id="cancel-btn">Cancel</button>
+      <button class="btn create-btn" id="create-btn">Create</button>
+    </div>
+  </form>
+</div>
+
+<div class="page-content" id="page-content">
+  <div class="note">
+    <div class="box-border">${titleForm.value}</div>
+    <hr />
+    <div class="note-content">
+      <div class="text-content">${textForm.value}</div>
+      <div class="note-options">
+        <button id="delete-btn" class="fa fa-trash"></button>
+      </div>
+    </div>
+  </div>
+</div> -->
