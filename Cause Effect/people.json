@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Otmar Tacke",
+    "street": "Ahornweg",
+    "city": "Welzow",
+    "state": "Sachsen",
+    "country": "Germany",
+    "phone": "0879-3512572"
+  },
+  {
+    "name": "Danny Nichols",
+    "street": "Cherry St",
+    "city": "Ironville",
+    "state": "Indianna",
+    "country": "United States",
+    "phone": "(951)-597-5323"
+  },
+  {
+    "name": "Blake Patel",
+    "street": "Harewood Road",
+    "city": "Hamilton",
+    "state": "Canterbury",
+    "country": "New Zealand",
+    "phone": "(480)=942-1137"
+  },
+  {
+    "name": "Efe Kiraq",
+    "street": "Anafaralar Cd",
+    "city": "Ordu",
+    "state": "Zonguldak",
+    "country": "Turkey",
+    "phone": "(750)-621-2365"
+  },
+  {
+    "name": "Laura Flotre",
+    "street": "Nybyggerveien",
+    "city": "Hafslo",
+    "state": "Hordaland",
+    "country": "Norway",
+    "phone": "72129049"
+  },
+  {
+    "name": "Bert Vlasveld",
+    "street": "Dirck Arentszstraat",
+    "city": "Hulst",
+    "state": "Drenthe",
+    "country": "Netherlands",
+    "phone": "(789)-394-4807"
+  },
+  {
+    "name": "Aaron King",
+    "street": "Vatan Cd",
+    "city": "Hatay",
+    "state": "Antalya",
+    "country": "Turkey",
+    "phone": "(372)-453-2657"
+  },
+  {
+    "name": "Tristan Christiansen",
+    "street": "Østergade",
+    "city": "København V",
+    "state": "Hovedstaden",
+    "country": "Denmark",
+    "phone": "77495274"
+  },
+  {
+    "name": "Nella Kokko",
+    "street": "Rue Bossuet",
+    "city": "Dijon",
+    "state": "Pyrénées-Orientales",
+    "country": "France",
+    "phone": "02-69-31-83-93"
+  },
+  {
+    "name": "Tess Bernard",
+    "street": "Place de L'Abbé-Basset",
+    "city": "Le Mans",
+    "state": "NevadHaute-Loirea",
+    "country": "France",
+    "phone": " 03-04-97-04-53"
+  }
+]
