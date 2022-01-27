@@ -112,104 +112,18 @@ button {
   }
 
   button {
-    height: 5.3rem;
-    width: 5.3rem;
-    font-size: 45px;
+    height: 4rem;
+    width: 4rem;
+    font-size: 30px;
   }
   .zero {
     border-radius: 50px;
-    width: 11rem;
+    width: 8.5rem;
   }
   .down-button {
     position: absolute;
     left: 20%;
     bottom: 0;
     margin-bottom: 25px;
-  }
-}
-
-@media (max-width: 405px) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-  }
-
-  button {
-    height: 5rem;
-    width: 5rem;
-    font-size: 45px;
-  }
-  .zero {
-    border-radius: 50px;
-    width: 10.5rem;
-  }
-}
-@media (max-width: 385px) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-  }
-
-  button {
-    height: 4.5rem;
-    width: 4.5rem;
-    font-size: 45px;
-  }
-  .zero {
-    border-radius: 50px;
-    width: 9.5rem;
-  }
-}
-@media (max-width: 354px) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-  }
-
-  button {
-    height: 4rem;
-    width: 4rem;
-    font-size: 35px;
-  }
-  .zero {
-    border-radius: 50px;
-    width: 8.7rem;
-  }
-}
-
-@media (max-width: 323px) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-  }
-
-  button {
-    height: 3.5rem;
-    width: 3.5rem;
-    font-size: 35px;
-  }
-  .zero {
-    border-radius: 50px;
-    width: 7.5rem;
   }
 }
