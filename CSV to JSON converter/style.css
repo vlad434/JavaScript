@@ -4,7 +4,6 @@ html {
 body {
   width: auto;
   background-color: rgb(45, 50, 58);
-  overflow: hidden;
 }
 
 .input-area {
@@ -50,7 +49,7 @@ textarea {
   width: 120px;
   border-radius: 20px;
   font-size: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: white;
   background-color: rgb(78, 0, 97);
 }
@@ -99,4 +98,59 @@ textarea {
   border-radius: 30px;
   text-align: center;
   background-color: red;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .input-area,
+  .output-area {
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  textarea {
+    height: 200px;
+    width: 60%;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+    border: 15px solid rgb(129, 129, 129);
+    background-color: rgb(85, 84, 84);
+    color: white;
+  }
+  .input-area,
+  .output-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    width: 500px;
+  }
+
+  .buttons-container {
+    width: 350px;
+    justify-content: space-around;
+  }
+
+  .button {
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    background-color: rgb(78, 0, 97);
+  }
 }
