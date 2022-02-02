@@ -1,159 +1,80 @@
-//BREAK SESSION SELECTORS
-let minusBreak = document.getElementById('minus-break');
-let numBreak = document.querySelector('.num-break');
-let plusBreak = document.getElementById('plus-break');
+//CLOCK CONTAINER SELECTORS
+const increase = document.getElementById('increase');
+let minutes = document.querySelector('.minutes');
+let seconds = document.querySelector('.seconds');
+const decrease = document.getElementById('decrease');
 
-//SESSION LENGTH SELECTORS
-let minusSession = document.getElementById('minus-session');
-let numSession = document.querySelector('.num-session');
-let plusSession = document.getElementById('plus-session');
+//BUTTONS SELECTORS
+const s_btn = document.querySelector('.session-buttons');
+const startBtn = document.getElementById('start-btn');
+const stopBtn = document.getElementById('stop-btn');
+const resetBtn = document.getElementById('reset-btn');
 
-//CLOCK SELECTORS
-let clockSession = document.querySelector('.clock-session');
-let workMin = document.getElementById('work-min');
-let workSec = document.getElementById('work-sec');
-let playBtn = document.querySelector('.fa-play-circle');
-let pauseBtn = document.querySelector('.fa-pause-circle');
-let resetBtn = document.querySelector('.fa-undo');
+let startTimerSession;
 
-//BREAK SELECTORS
-let breakSession = document.querySelector('.break-session');
-let breakMin = document.getElementById('break-min');
-let breakSec = document.getElementById('break-sec');
-let breakPlay = document.getElementById('break-play');
-let resetPlay = document.getElementById('reset-play');
-let replayContainer = document.querySelector('.replay-session');
-let resetAllBtn = document.getElementById('reset-all-btn');
-
-var startTimerSession;
-var startTimerBreak;
-//MINUS NUMBER OF BREAK MINUTES
-minusBreak.addEventListener('click', () => {
-  if (numBreak.innerText > 0 && breakMin.innerText > 0) {
-    numBreak.innerText--;
-    breakMin.innerText--;
+decrease.addEventListener('click', () => {
+  if (minutes.innerText > 00) {
+    minutes.innerText--;
+    formatTime(minutes);
   } else return;
+}); 
+
+increase.addEventListener('click', () => {
+  minutes.innerText++;
+  formatTime(minutes);
 });
 
-//PLUS NUMBER OF BREAK MINUTES
-plusBreak.addEventListener('click', () => {
-  numBreak.innerText++;
-  breakMin.innerText++;
-});
-
-//MINUS NUMBER OF SESSION MINUTES
-minusSession.addEventListener('click', () => {
-  if (numSession.innerText > 0 && workMin.innerText > 0) {
-    numSession.innerText--;
-    workMin.innerText--;
-    workMin.innerText = numSession.innerText;
-  } else return;
-});
-
-//PLUS NUMBER OF SESSION MINUTES
-plusSession.addEventListener('click', () => {
-  numSession.innerText++;
-  workMin.innerText++;
-  workMin.innerText = numSession.innerText;
-});
-
-//PLAY BUTTON (SESSION)
-playBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', () => {
+  startBtn.style.display = 'none';
+  s_btn.style.display = 'block';
   if (startTimerSession === undefined) {
-    startTimerSession = setInterval(sessionTimer, 1000);
+    startTimerSession = setInterval(startTimer, 100);
   } else {
-    alert('Clock is already running!');
+    console.log('Clock is already running!');
   }
 });
 
-//PLAY BUTTON (BREAK)
-breakPlay.addEventListener('click', () => {
-  if (startTimerBreak === undefined) {
-    startTimerBreak = setInterval(breakTimer, 1000);
-  }
-});
-
-//PAUSE BUTTON
-pauseBtn.addEventListener('click', () => {
-  stopSession();
+stopBtn.addEventListener('click', () => {
+  stopTimer();
   startTimerSession = undefined;
+  s_btn.style.display = 'none';
+  startBtn.style.display = 'block';
 });
 
-//RESET BUTTON SESSION
 resetBtn.addEventListener('click', () => {
   resetFunc();
-  stopSession();
+  stopTimer();
   startTimerSession = undefined;
 });
 
-//CLOCK LOGIC
-function sessionTimer() {
-  if (workSec.innerText != 0) {
-    workSec.innerText--;
-    workSec.innerText =
-      workSec.innerText < 10 ? '0' + workSec.innerText : workSec.innerText;
-  } else if (workMin.innerText != 0 && workSec.innerText == 0) {
-    workSec.innerText = 59;
-    workMin.innerText--;
+function formatTime(time) {
+  time.innerText = time.innerText < 10 ? '0' + time.innerText : time.innerText;
+}
+
+function startTimer() {
+  if (seconds.innerText != 0) {
+    seconds.innerText--;
+    formatTime(seconds);
+  } else if (minutes.innerText != 0 && seconds.innerText == 0) {
+    seconds.innerText = 59;
+    minutes.innerText--;
+    formatTime(minutes);
   }
 
-  if (workMin.innerText == '0' && workSec.innerText == '00') {
-    stopSession();
-    console.log('done');
-    clockSession.style.display = 'none';
-    endingSound();
-    breakSession.style.display = 'flex';
+  if (minutes.innerText == 00 && seconds.innerText == 00) {
+    stopTimer();
   }
 }
 
-// BREAK TIMER
-function breakTimer() {
-  if (breakSec.innerText != 0) {
-    breakSec.innerText--;
-    breakSec.innerText =
-      breakSec.innerText < 10 ? '0' + breakSec.innerText : breakSec.innerText;
-  } else if (breakMin.innerText != 0 && breakSec.innerText == 0) {
-    breakSec.innerText = 59;
-    breakMin.innerText--;
-  }
-
-  if (breakMin.innerText == '0' && breakSec.innerText == '00') {
-    stopBreak();
-    breakSession.style.display = 'none';
-    replayContainer.style.display = 'flex';
-    endingSound();
-  }
-}
-
-//RESET CLOCK FUNCTION
-function resetFunc() {
-  numBreak.innerText = '5';
-  numSession.innerText = '25';
-
-  workMin.innerText = '25';
-  workSec.innerText = '00';
-}
-
-//STOP CLOCK FUNCTION
-function stopSession() {
+function stopTimer() {
   clearInterval(startTimerSession);
+  console.log('stop');
 }
 
-function stopBreak() {
-  clearInterval(startTimerBreak);
-}
-
-resetAllBtn.addEventListener('click', () => {
-  resetFunc();
-  stopSession();
-  startTimerSession = undefined;
-  replayContainer.style.display = 'none';
-  clockSession.style.display = 'flex';
-});
-
-//AUDIO EFFECT
-function endingSound() {
-  const audio = new Audio();
-  audio.src = './clock.mp3';
-  audio.play();
+function resetFunc() {
+  minutes.innerText = '25';
+  seconds.innerText = '00';
+  stopTimer();
+  s_btn.style.display = 'none';
+  startBtn.style.display = 'block';
 }

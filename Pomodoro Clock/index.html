@@ -17,9 +17,9 @@
   <body>
     <div class="container">
       <div class="clock-container">
-        <button class="decrease"><i class="fas fa-chevron-down"></i></button>
-        <span class="time">00 : 10 : 00</span>
-        <button class="increase"><i class="fas fa-chevron-up"></i></button>
+        <button id="decrease"><i class="fas fa-chevron-down"></i></button>
+        <span class="minutes">00</span>:<span class="seconds">30</span>
+        <button id="increase"><i class="fas fa-chevron-up"></i></button>
       </div>
 
       <div class="images-container">
@@ -30,11 +30,16 @@
       </div>
 
       <div class="buttons-container">
-        <button class="start-btn">Start</button>
-        <button class="stop-btn">Stop</button>
-        <div class="break-container">
-          <button class="skip-btn">Skip</button>
-          <button class="Break-btn">Break Time</button>
+        <button class="btn start-btn" id="start-btn">Start</button>
+
+        <div class="session-buttons" style="display: none">
+          <button class="btn stop-btn" id="stop-btn">Stop</button>
+          <button class="btn reset-btn" id="reset-btn">Reset</button>
+        </div>
+
+        <div class="btn break-container" style="display: none">
+          <button class="btn skip-btn">Skip</button>
+          <button class="btn break-btn">Break Time</button>
         </div>
       </div>
     </div>
