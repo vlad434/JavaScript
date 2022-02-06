@@ -8,7 +8,7 @@
 02 | [Border Radius Previewer](https://github.com/vlad434/JavaScript/tree/master/Border-radius%20Previewer) | https://vlad434-border-radius-previewer.netlify.app/ | in progress..  |
 03 | [CSV to JSON](https://github.com/vlad434/JavaScript/tree/master/CSV%20to%20JSON%20converter)  | https://vlad434-csv-to-json-converter.netlify.app/ | in progress..  | 
 04 | [Calculator](https://github.com/vlad434/JavaScript/tree/master/Calculator) | https://vlad434-calculator.netlify.app/ | in progress..  |
-05 | [Christmas Lights](https://github.com/vlad434/JavaScript/tree/master/Christmas%20Lights) |  https://vlad434-christmas-lights.netlify.app/  | in progress..  | 
+05 | [Christmas Lights](https://github.com/vlad434/JavaScript/tree/master/Christmas%20Lights) |  https://vlad434-christmas-lights.netlify.app/  | DONE  | 
 06 | [Color changing background](https://github.com/vlad434/JavaScript/tree/master/Color%20Changing%20background)  | https://vlad434-color-changing-background.netlify.app/ | in progress..  | 
 07 | [Count Down Timer](https://github.com/vlad434/JavaScript/tree/master/Count%20down%20Timer) |  https://vlad434-count-down-timer.netlify.app  | in progress..  |
 08 | [Dynamic CSS Variables](https://github.com/vlad434/JavaScript/tree/master/Dinamic%20CSS%20Variables) | https://vlad434-dynamic-css-variables.netlify.app | in progress..  |
