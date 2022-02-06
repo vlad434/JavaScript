@@ -217,17 +217,12 @@ body {
 
   .title {
     color: #fff;
-    font-size: 5vw;
-    margin: 0;
+    font-size: 6vw;
   }
 
   .clock-container {
     width: 100%;
     font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
   }
 
   .clock-container button {
@@ -241,7 +236,7 @@ body {
 
   .images-container {
     height: 50%;
-    width: 350px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,11 +244,11 @@ body {
   }
 
   .tree {
-    height: 330px;
+    height: 450px;
   }
 
   .cloud {
-    height: 30px;
+    height: 35px;
   }
 
   .first {
@@ -271,10 +266,10 @@ body {
   }
 
   .buttons-container {
-    width: 50%;
+    width: 40%;
   }
 
   .btn {
-    font-size: 15px;
+    font-size: 20px;
   }
 }

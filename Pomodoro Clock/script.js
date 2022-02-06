@@ -138,12 +138,6 @@ function startTimer() {
 //STOP CLOCK FUNCTION
 function stopTimer(timer) {
   clearInterval(timer);
-  // if (current === 'session') {
-  //   clearInterval(Session);
-  // } else {
-  //   clearInterval(Break);
-  // }
-  // console.log('stop');
 }
 
 //RESET FUNCTION
