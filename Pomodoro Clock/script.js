@@ -119,9 +119,10 @@ function startTimer() {
   if (current == 'session') {
     if (minutes.innerText == 00 && seconds.innerText == 00) {
       stopTimer(Session);
+      endingSound();
       current = 'break';
       title.innerText = 'Break';
-      minutes.innerText = '25';
+      minutes.innerText = '05';
       session_buttons.style.display = 'none';
       break_buttons.style.display = 'block';
     }
@@ -130,6 +131,7 @@ function startTimer() {
       title.innerText = 'Session';
       stopTimer(Break);
       reset();
+      endingSound();
     }
   }
   updateTitle();
@@ -154,4 +156,10 @@ function reset() {
 
 function updateTitle() {
   Title.innerHTML = `${title.innerText} - (${minutes.innerText}:${seconds.innerText}) - Pomodoro Clock`;
+}
+
+function endingSound() {
+  const audio = new Audio();
+  audio.src = './clock.mp3';
+  audio.play();
 }

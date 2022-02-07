@@ -228,10 +228,10 @@ body {
   .clock-container button {
     width: 50px;
     font-size: 30px;
-  }
-
-  .clock-container button:hover {
-    color: rgb(65, 64, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
   }
 
   .images-container {
