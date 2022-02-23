@@ -67,11 +67,11 @@ lapBtn.addEventListener('click', () => {
         <div class="lap"
         <p class="title">Lap ${lap_num}</p>
                 <div class="time-passed">
-                  <span class="lap-num" id="time-min">${time_min} </span>
+                  <span class="lap-num" id="time-min"> ${time_min} </span>
                   <span>:</span>
-                  <span class="lap-num" id="time-sec">${time_sec}</span>
+                  <span class="lap-num" id="time-sec"> ${time_sec} </span>
                   <span>:</span>
-                  <span class="lap-num" id="time-milisec">${time_milisec}</span>  
+                  <span class="lap-num" id="time-milisec"> ${time_milisec} </span>  
         </div>   
   `;
 
