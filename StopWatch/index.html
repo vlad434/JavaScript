@@ -10,33 +10,38 @@
   </head>
   <body>
     <div class="container">
-      <div class="block">
-        <div class="clock-container">
-          <!-- clock -->
-          <p>
-            <!-- <span class="num" id="min">00</span>:
-            <span class="num" id="sec">00</span>:
-            <span class="num" id="milisec">00</span> -->
-            <span class="num" id="timerDisplay">00:00:00</span>
-          </p>
+      <div class="clock">
+        <div class="btn-container-upLeft">
+          <div class="btn-head"></div>
+          <div class="bar"></div>
         </div>
+        <div class="btn-container-upMid">
+          <div class="btn-head"></div>
+          <div class="bar"></div>
+        </div>
+        <p></p>
+        <div class="btn-container-upRight">
+          <div class="btn-head"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="time-output">
+          <span class="num" id="timerDisplay">00:00:00</span>
+        </div>
+      </div>
 
-        <div class="controls">
-          <!-- buttons -->
-          <div class="buttons">
-            <button class="button" id="start-btn">Start</button>
-            <button class="btn btn-left hide" id="lap-btn">Lap</button>
-            <button class="btn btn-right hide" id="pause-btn">Pause</button>
-            <button class="btn btn-left hide" id="reset-btn">Reset</button>
-            <button class="btn btn-middle hide" id="clear-laps">
-              Clear Laps
-            </button>
-            <button class="btn btn-right hide" id="continue-btn">
-              Continue
-            </button>
+      <div class="controls">
+        <!-- buttons -->
+        <div class="buttons">
+          <button class="button" id="start-btn">Start</button>
+          <button class="btn btn-left hide" id="lap-btn">Lap</button>
+          <button class="btn btn-right hide" id="pause-btn">Pause</button>
+          <button class="btn btn-left hide" id="reset-btn">Reset</button>
+          <button class="btn btn-middle hide" id="clear-laps">
+            Clear Laps
+          </button>
+          <button class="btn btn-right hide" id="continue-btn">Continue</button>
 
-            <button class="button hide" id="final-reset">Reset</button>
-          </div>
+          <button class="button hide" id="final-reset">Reset</button>
         </div>
       </div>
       <div class="laps">

@@ -58,16 +58,16 @@ resetBtn.addEventListener('click', () => {
 });
 
 lapBtn.addEventListener('click', () => {
-  time_min = minutes;
-  time_sec = seconds;
-  time_milisec = miliseconds;
+  time_min = minutes < 10 ? '0' + minutes : minutes;
+  time_sec = seconds < 10 ? '0' + seconds : seconds;
+  time_milisec = miliseconds < 10 ? '0' + miliseconds : miliseconds;
   let lap_num = document.querySelectorAll('.lap').length + 1;
 
   let output = `
         <div class="lap"
         <p class="title">Lap ${lap_num}</p>
                 <div class="time-passed">
-                  <span class="lap-num" id="time-min">${time_min}</span>
+                  <span class="lap-num" id="time-min">${time_min} </span>
                   <span>:</span>
                   <span class="lap-num" id="time-sec">${time_sec}</span>
                   <span>:</span>
