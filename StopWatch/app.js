@@ -15,9 +15,9 @@ const finalReset = document.getElementById('final-reset');
 
 //lap selectors
 const laps = document.querySelector('.laps');
-let time_min = document.getElementById('time-min');
-let time_sec = document.getElementById('time-sec');
-let time_milisec = document.getElementById('time-milisec');
+// let time_min = document.getElementById('time-min');
+// let time_sec = document.getElementById('time-sec');
+// let time_milisec = document.getElementById('time-milisec');
 
 startBtn.addEventListener('click', () => {
   int = setInterval(displayTime, 10);

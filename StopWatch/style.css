@@ -98,6 +98,8 @@ html {
   color: white;
   font-family: myFont;
   font-size: 80px;
+  display: flex;
+  flex-direction: row;
 }
 
 /* Buttons */
