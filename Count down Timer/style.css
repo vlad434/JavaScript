@@ -106,4 +106,14 @@ span {
   .fa-plus-square {
     font-size: 7vw;
   }
+
+  /* MODAL */
+  .modal {
+    margin-bottom: 0px;
+    height: 20vh;
+    width: 90vw;
+    font-size: 20px;
+    border-radius: 15px;
+    position: absolute;
+  }
 }
