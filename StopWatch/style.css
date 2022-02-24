@@ -120,6 +120,7 @@ html {
   background-color: rgb(0, 68, 255);
   border: 3px dashed black;
   transition: 0.2s ease-in-out;
+  margin-top: 20px;
 }
 
 .button {
@@ -130,10 +131,13 @@ html {
     'Lucida Sans', Arial, sans-serif;
   cursor: pointer;
   color: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 
 .btn {
-  height: 5vh;
+  height: 100%;
   width: 7.5vw;
   font-size: 1rem;
   background-color: transparent;
@@ -143,16 +147,34 @@ html {
 }
 
 .btn-left {
+  height: 100%;
+  width: 50%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-right: 1px solid black;
+}
+
+.btn-right {
+  height: 100%;
+  width: 50%;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-left: 1px solid black;
+}
+
+.btn-left-reset {
+  width: 33%;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   border-right: 1px solid black;
 }
 
 .btn-middle {
-  font-size: 1rem;
+  width: 33%;
 }
 
-.btn-right {
+.btn-right-continue {
+  width: 33%;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   border-left: 1px solid black;
@@ -172,6 +194,7 @@ html {
   width: 300px;
   padding: 5px;
   overflow-y: scroll;
+  margin-top: 20px;
 }
 
 .laps::-webkit-scrollbar {
