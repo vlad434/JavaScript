@@ -89,7 +89,10 @@ body {
 
 @media (max-width: 850px) {
   .big-output {
-    font-size: 7rem;
+    height: 10rem;
+    width: 85vw;
+    margin-top: 45%;
+    font-size: 60px;
   }
   .output {
     height: 10vh;
