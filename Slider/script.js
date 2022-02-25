@@ -37,7 +37,10 @@ const prevSlide = () => {
 const nextSlide = () => {
   const current = document.querySelector('.current');
   current.classList.remove('current');
-  if (current.nextElementSibling) {
+  if (
+    current.nextElementSibling &&
+    current.nextElementSibling.classList.contains('slide')
+  ) {
     current.nextElementSibling.classList.add('current');
   } else {
     slides[0].classList.add('current');
