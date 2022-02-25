@@ -17,14 +17,14 @@
 11 | [GitHub Status](https://github.com/vlad434/JavaScript/tree/master/GItHub%20Status) | https://vlad434-github-status.netlify.app/ | in progress..  |
 12 | [Greeting](https://github.com/vlad434/JavaScript/tree/master/Greeting) | https://vlad434-greeting.netlify.app/ | in progress..  | 
 13 | [Key Value](https://github.com/vlad434/JavaScript/tree/master/Key%20Value%20App) | http://vlad434-key-value-app.netlify.app | in progress..  |
-14 | [Lorem Ipsum Generator](https://github.com/vlad434/JavaScript/tree/master/Lorem%20Ipsum%20Generator) | https://vlad434-lorem-ipsum.netlify.app | in progress..  | 
+14 | [Lorem Ipsum Generator](https://github.com/vlad434/JavaScript/tree/master/Lorem%20Ipsum%20Generator) | https://vlad434-lorem-ipsum.netlify.app | DONE  | 
 15 | [Notes App](https://github.com/vlad434/JavaScript/tree/master/Notes%20App) | https://vlad434-notes-app.netlify.app | in progress..  |
 16 | [Pomodoro Clock](https://github.com/vlad434/JavaScript/tree/master/Pomodoro%20Clock) | https://vlad434-pomodoro-clock.netlify.app | almost done | 
 17 | [Quiz App](https://github.com/vlad434/JavaScript/tree/master/Quiz%20App) | https://vlad434-quiz-app.netlify.app | DONE  | 
 18 | [Random Meal Generator](https://github.com/vlad434/JavaScript/tree/master/Random%20Meal%20Generator) | https://vlad434-recipe-generator.netlify.app | DONE  | 
 19 | [Random Number Generator](https://github.com/vlad434/JavaScript/tree/master/Random%20Number%20Generator) | https://vlad434-random-number-generator.netlify.app | in progress..  | 
 20 | [Slider](https://github.com/vlad434/JavaScript/tree/master/Slider) | https://vlad434-slider.netlify.app | in progress..  | 
-21 | [StopWatch](https://github.com/vlad434/JavaScript/tree/master/StopWatch) | https://vlad434-stopwatch.netlify.app | in progress..  | 
+21 | [StopWatch](https://github.com/vlad434/JavaScript/tree/master/StopWatch) | https://vlad434-stopwatch.netlify.app | DONE  | 
 22 | [Validation form with regex](https://github.com/vlad434/JavaScript-Projects/tree/master/Validation%20form%20with%20regex) | https://vlad434-validation-form.netlify.app |  in progress..
 23 | [Wind Chill](https://github.com/vlad434/JavaScript/tree/master/WindChill) | https://vlad434-wind-chill-calculator.netlify.app | in progress..  |  
 24 | [Weather App](https://github.com/vlad434/JavaScript/tree/master/Weather%20App) | http://vlad434-weather-app.netlify.app | in progress..  |
