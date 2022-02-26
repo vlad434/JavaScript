@@ -4,7 +4,7 @@
 
 #| Name  |  Live Demo | Status |
 ---- | ------------- | ------------- |------------- |
-01 | [Bin2Dec](https://github.com/vlad434/JavaScript/tree/master/Bin2Dec) | https://vlad434-binary-to-decimal-convert.netlify.app/ | in progress..  |
+01 | [Bin2Dec](https://github.com/vlad434/JavaScript/tree/master/Bin2Dec) | https://vlad434-binary-to-decimal-convert.netlify.app/ | DONE  |
 02 | [Border Radius Previewer](https://github.com/vlad434/JavaScript/tree/master/Border-radius%20Previewer) | https://vlad434-border-radius-previewer.netlify.app/ | in progress..  |
 03 | [CSV to JSON](https://github.com/vlad434/JavaScript/tree/master/CSV%20to%20JSON%20converter)  | https://vlad434-csv-to-json-converter.netlify.app/ | in progress..  | 
 04 | [Calculator](https://github.com/vlad434/JavaScript/tree/master/Calculator) | https://vlad434-calculator.netlify.app/ | in progress..  |
