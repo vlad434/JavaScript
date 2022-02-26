@@ -8,23 +8,28 @@
     <link rel="icon" href="icon.png" />
     <link
       rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <title>B2D</title>
+    <title>Binary to Decimal Converter</title>
   </head>
   <body>
     <div class="container">
-      <div class="left">
-        <input type="text" class="num1" id="binary" placeholder="Binary" />
+      <div class="swap-buttons">
+        <button class="btn" id="bin-to-dec">Bin to Dec</button>
+        <button class="btn" id="dec-to-bin">Dec to Bin</button>
       </div>
 
       <div class="msg"></div>
 
-      <div class="right">
+      <div class="inputs">
+        <input type="text" class="num1" id="binary" placeholder="Binary" />
+        <i class="fa-solid fa-right-left"></i>
         <input type="text" class="num2" id="decimal" placeholder="Decimal" />
       </div>
+      <button class="btn btn-convert" id="convert">Convert to decimal</button>
     </div>
     <script defer src="app.js"></script>
   </body>
