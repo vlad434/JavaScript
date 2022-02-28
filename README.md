@@ -16,7 +16,7 @@
 10 | [Flip Image](https://github.com/vlad434/JavaScript/tree/master/Dollars%20to%20cents%20converter) | https://vlad434-flip-image.netlify.app | in progress..  |  
 11 | [GitHub Status](https://github.com/vlad434/JavaScript/tree/master/GItHub%20Status) | https://vlad434-github-status.netlify.app/ | in progress..  |
 12 | [Greeting](https://github.com/vlad434/JavaScript/tree/master/Greeting) | https://vlad434-greeting.netlify.app/ | in progress..  | 
-13 | [Key Value](https://github.com/vlad434/JavaScript/tree/master/Key%20Value%20App) | http://vlad434-key-value-app.netlify.app | in progress..  |
+13 | [Key Value](https://github.com/vlad434/JavaScript/tree/master/Key%20Value%20App) | http://vlad434-key-value-app.netlify.app | DONE  |
 14 | [Lorem Ipsum Generator](https://github.com/vlad434/JavaScript/tree/master/Lorem%20Ipsum%20Generator) | https://vlad434-lorem-ipsum.netlify.app | DONE  | 
 15 | [Notes App](https://github.com/vlad434/JavaScript/tree/master/Notes%20App) | https://vlad434-notes-app.netlify.app | in progress..  |
 16 | [Pomodoro Clock](https://github.com/vlad434/JavaScript/tree/master/Pomodoro%20Clock) | https://vlad434-pomodoro-clock.netlify.app | almost done | 
