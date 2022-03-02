@@ -6,6 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: rgb(83, 81, 81);
 }
 
 .container {
@@ -32,7 +33,7 @@ body {
 }
 
 .btn {
-  width: 100%;
+  width: 35vw;
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 5px;
@@ -54,7 +55,7 @@ body {
 
 .table-container {
   width: 30vw;
-  height: 42vh;
+  height: 43vh;
   border-radius: 10px;
   padding: 5px;
   display: flex;
@@ -62,14 +63,17 @@ body {
   align-items: space-between;
   flex-direction: column;
   overflow-y: scroll;
+  position: relative;
 }
 
 .table-container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-table tbody tr:first-child {
-  position: sticky;
+th {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
 }
 
 tr {
@@ -85,12 +89,6 @@ th:nth-child(2) {
 
 th:nth-child(3) {
   width: 33.3%;
-}
-
-th {
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
 }
 
 td:first-child,
@@ -131,23 +129,42 @@ tr:nth-child(odd) {
 }
 
 @media (max-width: 900px) {
-  .container {
+  .container,
+  .btn {
     width: 55vw;
+  }
+  .table-container {
+    width: 45vw;
   }
 }
 @media (max-width: 800px) {
-  .container {
+  .container,
+  .btn {
     width: 65vw;
+  }
+  .table-container {
+    width: 55vw;
   }
 }
 @media (max-width: 700px) {
-  .container {
+  .container,
+  .btn {
     width: 75vw;
+  }
+
+  .table-container {
+    width: 55vw;
+    height: 42vh;
   }
 }
 
 @media (max-width: 600px) {
-  .container {
+  .container,
+  .btn {
     width: 85vw;
+  }
+  .table-container {
+    width: 55vw;
+    height: 42vh;
   }
 }

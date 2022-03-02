@@ -10,12 +10,10 @@
   </head>
   <body>
     <div class="container">
-      <header class="header">Word Frequency Counter</header>
-      <br />
-
       <textarea
         name="input"
         class="input"
+        type="text"
         id="input-area"
         spellcheck="true"
         placeholder="Insert your text here..."
@@ -23,7 +21,7 @@
       <br />
       <button class="btn" id="counter">Count the words!</button>
       <br />
-      <table class="table-container">
+      <table class="table table-container" style="display: none">
         <tr>
           <th>Rank</th>
           <th>Count</th>
