@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="app.js" />
+    <title>Word Frequency Counter</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">Word Frequency Counter</header>
+      <br />
+
+      <textarea
+        name="input"
+        class="input"
+        id="input-area"
+        spellcheck="true"
+        placeholder="Insert your text here..."
+      ></textarea>
+      <br />
+      <button class="btn" id="counter">Count the words!</button>
+      <br />
+      <table class="table-container">
+        <tr>
+          <th>Rank</th>
+          <th>Count</th>
+          <th>Word</th>
+        </tr>
+      </table>
+      <div class="error-box" id="error-box">
+        <p>Please insert a word in the area</p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
