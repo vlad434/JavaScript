@@ -29,7 +29,7 @@
 23 | [Wind Chill](https://github.com/vlad434/JavaScript/tree/master/WindChill) | https://vlad434-wind-chill-calculator.netlify.app | in progress..  |  
 24 | [Weather App](https://github.com/vlad434/JavaScript/tree/master/Weather%20App) | http://vlad434-weather-app.netlify.app | in progress..  |
 25 | [Product Landing Page](https://github.com/vlad434/JavaScript/tree/master/Product%20Landing%20Page) | https://vlad434-product-landing-page.netlify.app | in progress... | 
-26 | [Word Frequency Counter](https://github.com/vlad434/JavaScript/tree/master/Word%20Frequency%20Counter) | vlad434-word-frequency-counter.netlify.app | in progress... | 
+26 | [Word Frequency Counter](https://github.com/vlad434/JavaScript/tree/master/Word%20Frequency%20Counter) | https://vlad434-word-frequency-counter.netlify.app | in progress... | 
 
 
 
