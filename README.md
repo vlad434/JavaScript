@@ -36,8 +36,8 @@
 
 #| Name  |  Live Demo | Status |
 ---- | ------------- | ------------- |------------- |
-01 | [Array Loop Methods](https://github.com/vlad434/JavaScript/tree/master/Array%20Loop%20Methods) |  | DONE  |
-02 | [Hangman](https://github.com/vlad434/JavaScript/tree/master/Hang-man) |  | in progress..  |
-03 | [Movie Seat Booking](https://github.com/vlad434/JavaScript/tree/master/Movie%20Seat%20Booking)  |  | in progress..  | 
-04 | [Speed Typing](https://github.com/vlad434/JavaScript/tree/master/Speed%20Typing) |  | in progress..  |
+01 | [Array Loop Methods](https://github.com/vlad434/JavaScript/tree/master/Array%20Loop%20Methods) | https://vlad434-array-loop-methods.netlify.app | DONE  |
+02 | [Hangman](https://github.com/vlad434/JavaScript/tree/master/Hang-man) | https://vlad434-hangman.netlify.app | in progress..  |
+03 | [Movie Seat Booking](https://github.com/vlad434/JavaScript/tree/master/Movie%20Seat%20Booking)  | https://vlad434-movie-seat-booking.netlify.app | in progress..  | 
+04 | [Speed Typing](https://github.com/vlad434/JavaScript/tree/master/Speed%20Typing) | https://vlad434-speed-typing.netlify.app | in progress..  |
  
