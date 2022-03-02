@@ -29,3 +29,15 @@
 23 | [Wind Chill](https://github.com/vlad434/JavaScript/tree/master/WindChill) | https://vlad434-wind-chill-calculator.netlify.app | in progress..  |  
 24 | [Weather App](https://github.com/vlad434/JavaScript/tree/master/Weather%20App) | http://vlad434-weather-app.netlify.app | in progress..  |
 25 | [Product Landing Page](https://github.com/vlad434/JavaScript/tree/master/Product%20Landing%20Page) | https://vlad434-product-landing-page.netlify.app | in progress... | 
+
+
+# Side Work
+
+
+#| Name  |  Live Demo | Status |
+---- | ------------- | ------------- |------------- |
+01 | [Array Loop Methods](https://github.com/vlad434/JavaScript/tree/master/Array%20Loop%20Methods) |  | DONE  |
+02 | [Hangman](https://github.com/vlad434/JavaScript/tree/master/Hang-man) |  | in progress..  |
+03 | [Movie Seat Booking](https://github.com/vlad434/JavaScript/tree/master/Movie%20Seat%20Booking)  |  | in progress..  | 
+04 | [Speed Typing](https://github.com/vlad434/JavaScript/tree/master/Speed%20Typing) |  | in progress..  |
+ 
