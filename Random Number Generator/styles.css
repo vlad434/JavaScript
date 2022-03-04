@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Lato:wght@100&family=Poppins:ital,wght@0,500;1,300&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font: 'Poppins', sans-serif;
+}
+
 body,
 html {
   padding: 0;
   margin: 0;
-  background-color: rgb(58, 148, 88);
+  background-color: rgb(44, 145, 204);
 }
 
 .container {
@@ -12,111 +21,104 @@ html {
   flex-direction: column;
 }
 
-.text-box {
-  padding: 1vh;
-  margin-top: 5vh;
-  width: 70vw;
-  text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 4vh;
-  border-radius: 15px;
-  background-color: rgb(73, 100, 68);
-  color: white;
-  box-shadow: 0 0 15px black;
-}
-
 .numbers-container {
   height: 15vh;
-  width: 40vw;
+  width: 90vw;
   margin-top: 5vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: var(--font);
   font-size: 4vh;
   border-radius: 15px;
-  background-color: rgb(73, 100, 68);
+  background-color: rgb(18, 95, 139);
   color: white;
-  box-shadow: 0 0 15px black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .min,
 .max {
+  width: 15%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
+#max {
+}
+
 .num {
-  height: 4vh;
-  width: 5vw;
+  height: 30px;
+  width: 75px;
   border-radius: 20px;
   text-align: center;
   font-weight: bold;
-  font-size: 4vh;
+  font-size: 25px;
 }
 
 .label {
-  font-size: 2.2vw;
+  font-size: 30px;
 }
 
 .output-container {
-  height: 15vw;
-  width: 30vw;
-  margin-top: 5vh;
+  height: 75vh;
+  width: 100vw;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 4vw;
-  border-radius: 15px;
-  background-color: rgb(73, 100, 68);
+  font-family: var(--font);
   color: white;
-  box-shadow: 0 0 15px black;
+}
+
+.output {
+  font-size: 150px;
 }
 
 .btn {
-  width: 20vw;
-  font-size: 3.5vw;
-  color: rgb(35, 196, 7);
+  position: absolute;
+  bottom: 5%;
+  width: auto;
+  font-family: var(--font);
+  font-size: 30px;
+  color: rgb(18, 95, 139);
   border-radius: 15px;
 }
 
 .btn:hover {
-  background-color: rgb(35, 196, 7);
-  color: white;
+  background-color: rgb(18, 95, 139);
+  color: #fff;
 }
 
-@media (max-width: 950px) {
-  .text-box {
-    width: 70vw;
-    font-size: 2.5vh;
-  }
+.btn:active {
+  transform: scale(0.95);
+}
 
-  .numbers-container {
-    height: 12vh;
-    width: 50vw;
-  }
-
+@media (max-width: 750px) {
   .label {
-    font-size: 5vw;
+    font-size: 20px;
   }
 
+  .output {
+    font-size: 200px;
+  }
+  .min,
+  .max {
+    flex-direction: column;
+  }
   .num {
-    height: 3vh;
-    width: 10vw;
-    font-weight: normal;
-    font-size: 4vw;
+    height: 25px;
+    width: 65px;
+    font-size: 20px;
   }
-
-  .output-container {
-    height: 15vw;
-    width: 35vw;
-  }
-
   .btn {
-    width: 30vw;
-    font-size: 5.5vw;
+    position: absolute;
+    bottom: 5%;
+    width: auto;
+    font-family: var(--font);
+    font-size: 30px;
+    color: rgb(18, 95, 139);
+    border-radius: 15px;
   }
 }
