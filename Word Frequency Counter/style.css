@@ -1,12 +1,14 @@
 html,
 body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: rgb(83, 81, 81);
+  background-color: rgba(49, 131, 133, 0.4);
 }
 
 .container {
@@ -55,15 +57,22 @@ body {
 
 .table-container {
   width: 30vw;
-  height: 43vh;
+  height: auto;
+  max-height: 34vh;
   border-radius: 10px;
-  padding: 5px;
   display: flex;
+  padding: 0.5rem;
   justify-content: flex-start;
   align-items: space-between;
   flex-direction: column;
   overflow-y: scroll;
   position: relative;
+  transition: all 0.3s linear;
+}
+
+.table-container:hover {
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
 }
 
 .table-container::-webkit-scrollbar {
@@ -104,12 +113,29 @@ td {
   border: 1px solid black;
   display: flex;
   justify-content: center;
+  color: #fff;
 }
 tr:nth-child(odd) {
   background-color: rgb(26, 134, 167);
-  color: #fff;
 }
 
+.total-words {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(26, 134, 167);
+  color: rgb(255, 255, 255);
+  transition: all 0.3s linear;
+  display: none;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 20px;
+}
+
+tr:nth-child(odd):hover,
+tr:nth-child(even):hover,
+.total-words:hover {
+  background-color: rgb(71, 169, 199);
+}
 .error-box {
   width: 35vw;
   height: 10vh;
@@ -143,6 +169,8 @@ tr:nth-child(odd) {
     width: 65vw;
   }
   .table-container {
+    height: auto;
+    max-height: 28vh;
     width: 55vw;
   }
 }
@@ -154,7 +182,8 @@ tr:nth-child(odd) {
 
   .table-container {
     width: 55vw;
-    height: 42vh;
+    height: auto;
+    max-height: 42vh;
   }
 }
 
@@ -165,6 +194,7 @@ tr:nth-child(odd) {
   }
   .table-container {
     width: 55vw;
-    height: 42vh;
+    height: auto;
+    max-height: 42vh;
   }
 }
