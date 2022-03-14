@@ -22,7 +22,7 @@
 16 | [Pomodoro Clock](https://github.com/vlad434/JavaScript/tree/master/Pomodoro%20Clock) | https://vlad434-pomodoro-clock.netlify.app | almost done | 
 17 | [Quiz App](https://github.com/vlad434/JavaScript/tree/master/Quiz%20App) | https://vlad434-quiz-app.netlify.app | DONE  | 
 18 | [Random Meal Generator](https://github.com/vlad434/JavaScript/tree/master/Random%20Meal%20Generator) | https://vlad434-recipe-generator.netlify.app | DONE  | 
-19 | [Random Number Generator](https://github.com/vlad434/JavaScript/tree/master/Random%20Number%20Generator) | https://vlad434-random-number-generator.netlify.app | in progress..  | 
+19 | [Random Number Generator](https://github.com/vlad434/JavaScript/tree/master/Random%20Number%20Generator) | https://vlad434-random-number-generator.netlify.app | DONE  | 
 20 | [Slider](https://github.com/vlad434/JavaScript/tree/master/Slider) | https://vlad434-slider.netlify.app | almost done  | 
 21 | [StopWatch](https://github.com/vlad434/JavaScript/tree/master/StopWatch) | https://vlad434-stopwatch.netlify.app | DONE  | 
 22 | [Validation form with regex](https://github.com/vlad434/JavaScript-Projects/tree/master/Validation%20form%20with%20regex) | https://vlad434-validation-form.netlify.app |  in progress..
