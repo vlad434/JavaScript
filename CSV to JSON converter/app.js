@@ -1,17 +1,19 @@
 const alertContainer = document.querySelector('.alert');
-const convertInCSV = document.getElementById('convert-to-csv');
+const convertCSV = document.getElementById('convert-to-csv');
 const input = document.getElementById('input');
 const output = document.getElementById('textarea');
-const uploadBtn = document.getElementById('upload');
-const downloadBtn = document.getElementById('download-btn');
 const clearBtn = document.getElementById('clear-btn');
+const downloadBtn = document.getElementById('download-btn');
 const copyBtn = document.getElementById('copy-btn');
 
-convertInCSV.addEventListener('click', convertToCSV);
+convertCSV.addEventListener('click', convertToCSV);
 clearBtn.addEventListener('click', clearAll);
+downloadBtn.addEventListener('click', downloadFile);
+copyBtn.addEventListener('click', copyText);
 
+//CONVERT JSON TO CSV
 function convertToCSV() {
-  if (validate()) {
+  if (validateJSON()) {
     let csvText = '';
     jsonText = input.value;
     jsonText = jsonText.replace(/[\r\s\n\]\[\{"]/g, '');
@@ -22,7 +24,6 @@ function convertToCSV() {
       let currVar;
       currVar = variables[i];
       vars = currVar.split(',');
-
       for (let j = 0; j < vars.length; j++) {
         vars[j] = vars[j].split(':');
       }
@@ -48,10 +49,10 @@ function convertToCSV() {
       output.value = csvText;
     }
   } else {
-    alertMessage('Invalid input!');
+    alertMessage('Invalid JSON!');
   }
 
-  function validate() {
+  function validateJSON() {
     const textJSON = input.value;
     try {
       JSON.parse(textJSON);
@@ -63,29 +64,41 @@ function convertToCSV() {
 }
 
 function alertMessage(message) {
-  const alert = document.createElement('h1');
-  alert.textContent = message;
-  alertContainer.appendChild(alert);
-
-  setTimeout(function () {
-    document.querySelector('.alert').remove();
-    window.location.reload();
+  alertContainer.textContent = message;
+  alertContainer.style.display = 'block';
+  setTimeout(() => {
+    alertContainer.style.display = 'none';
   }, 1000);
 }
 
+//CLEAR INPUT AND OUTPUT
 function clearAll() {
-  input.value = '';
-  output.value = '';
+  if (input.value === '' && output.value === '') {
+    alertMessage('Nothing to clear...');
+  } else {
+    input.value = '';
+    output.value = '';
+  }
 }
 
+//COPY THE OUTPUT TEXT
 function copyText() {
-  document.querySelector('textarea[name="output"]').select();
-  document.execCommand('copy');
+  if (output.value !== '') {
+    document.querySelector('textarea[name="output"]').select();
+    document.execCommand('copy');
+  } else {
+    alertMessage("There's nothing to copy...");
+  }
 }
 
 function downloadFile() {
-  var textt = output.value;
-  var blob = new Blob([textt], { type: 'text/plain;charset=utf-8' });
-  FileSaver.saveAs(blob, 'hello world.txt');
-  console.log(textt);
+  if (output.value !== '') {
+    // var textt = output.value;
+    // var blob = new Blob([textt], { type: 'text/plain;charset=utf-8' });
+    // FileSaver.saveAs(blob, 'hello world.txt');
+    // console.log(textt);
+    console.log('download');
+  } else {
+    alertMessage("There's nothing to download...");
+  }
 }
