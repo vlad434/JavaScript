@@ -91,7 +91,7 @@ function showNotification() {
 
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 2000);
+  }, 1000);
 }
 
 //INPUT LETTERS

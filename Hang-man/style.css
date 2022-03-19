@@ -147,9 +147,9 @@ h1 {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  bottom: 10px;
-  width: 65%;
-  height: 33%;
+  bottom: 50px;
+  width: 60%;
+  height: 25%;
   border-radius: 10px;
   border: 3px solid black;
   transition: all 0.4s linear;
@@ -157,16 +157,16 @@ h1 {
 }
 
 .active {
-  transform: translateY(250px);
+  transform: translateY(350px);
 }
 
 .keyboard button {
   cursor: pointer;
   text-align: center;
-  font-size: 2.5vw;
-  width: 5vw;
+  font-size: 2vw;
+  width: 4vw;
   padding: 5px;
-  margin-left: 1rem;
+  margin-left: 0.8rem;
   border-radius: 10px;
   border: 3px solid black;
   background-color: transparent;
@@ -231,5 +231,9 @@ h1 {
     font-size: 4vw;
     width: 6.5vw;
     margin-left: 0rem;
+  }
+
+  .notification-container.show {
+    transform: translateY(-50px);
   }
 }
