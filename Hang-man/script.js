@@ -7,6 +7,10 @@ const playAgainBtn = document.getElementById('play-button');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
+const keyboardBtn = document.getElementById('keyboard-btn');
+const keyboardEl = document.querySelector('.keyboard');
+const keys = document.querySelectorAll('#key');
+
 const words = [
   'cooperate',
   'leaflet',
@@ -90,6 +94,7 @@ function showNotification() {
   }, 2000);
 }
 
+//INPUT LETTERS
 window.addEventListener('keydown', (e) => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     const letter = e.key;
@@ -113,6 +118,30 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+//INPUT LETTERS WITH VIRTUAL KEYBOARD
+keys.forEach((key) => {
+  key.addEventListener('click', (e) => {
+    const letter = e.target.innerText.toLocaleLowerCase();
+    console.log(letter);
+    if (selectedWord.includes(letter)) {
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter);
+
+        displayWord();
+      } else {
+        showNotification();
+      }
+    } else {
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter);
+        updateWrongLetters();
+      } else {
+        showNotification();
+      }
+    }
+  });
+});
+
 playAgainBtn.addEventListener('click', () => {
   //empty arrays
   correctLetters.splice(0);
@@ -123,6 +152,10 @@ playAgainBtn.addEventListener('click', () => {
 
   updateWrongLetters();
   popup.style.display = 'none';
+});
+
+keyboardBtn.addEventListener('click', () => {
+  keyboardEl.classList.toggle('active');
 });
 
 displayWord();
