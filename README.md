@@ -6,7 +6,7 @@
 ---- | ------------- | ------------- |------------- |
 01 | [Bin2Dec](https://github.com/vlad434/JavaScript/tree/master/Bin2Dec) | https://vlad434-binary-to-decimal-convert.netlify.app/ | DONE  |
 02 | [Border Radius Previewer](https://github.com/vlad434/JavaScript/tree/master/Border-radius%20Previewer) | https://vlad434-border-radius-previewer.netlify.app/ | DONE  |
-03 | [CSV to JSON](https://github.com/vlad434/JavaScript/tree/master/CSV%20to%20JSON%20converter)  | https://vlad434-csv-to-json-converter.netlify.app/ | in progress..  | 
+03 | [CSV to JSON](https://github.com/vlad434/JavaScript/tree/master/CSV%20to%20JSON%20converter)  | https://vlad434-csv-to-json-converter.netlify.app/ | almost done | 
 04 | [Calculator](https://github.com/vlad434/JavaScript/tree/master/Calculator) | https://vlad434-calculator.netlify.app/ | in progress..  |
 05 | [Christmas Lights](https://github.com/vlad434/JavaScript/tree/master/Christmas%20Lights) |  https://vlad434-christmas-lights.netlify.app/  | DONE  | 
 06 | [Color changing background](https://github.com/vlad434/JavaScript/tree/master/Color%20Changing%20background)  | https://vlad434-color-changing-background.netlify.app/ | in progress..  | 
