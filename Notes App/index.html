@@ -4,24 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Notes App</title>
     <link
       rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <script src="app.js" defer></script>
-    <title>Note App</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <button class="add" id="add">
-        <i class="fa fa-plus"></i>
+    <header>
+      <h1>Notes</h1>
+      <button class="btn" id="add-btn">
+        <i class="fa-solid fa-circle-plus"></i>
       </button>
-      <div class="notes-container">
-        <!-- notes here -->
+    </header>
+    <form class="form input-form" id="add-form" style="display: none">
+      <div class="area form-title">
+        <label for="form-title">Title: </label>
+        <input type="text" id="form-title" />
       </div>
-    </div>
+      <div class="area form-color">
+        <label for="form-color">Color:</label>
+        <input type="color" id="form-color" value="#000000" />
+      </div>
+      <div class="area form-content">
+        <label for="form-content">Content: </label>
+        <textarea
+          id="form-content"
+          cols="30"
+          rows="10"
+          placeholder="Note Here"
+          spellcheck="false"
+        ></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn cancel-btn">Cancel</button>
+        <button class="btn add-note">Add Note</button>
+      </div>
+    </form>
+    <div class="container"></div>
   </body>
 </html>
