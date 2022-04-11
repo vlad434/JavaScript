@@ -7,6 +7,8 @@ class Note {
   }
 }
 
+let notes = [];
+
 const addBtn = document.getElementById('add-btn');
 const addForm = document.getElementById('add-form');
 const cancelBtn = document.querySelector('.cancel-btn');
@@ -35,7 +37,7 @@ function addToUI(noteToAdd) {
   noteTitle.innerHTML = noteToAdd._title;
   let noteContent = document.createElement('div');
   noteContent.innerHTML = noteToAdd._content;
-  noteDiv.style.backgroundImage = `linear-gradient(180deg, ${noteToAdd._color} 0%, rgb(191, 191, 191) 10%)`;
+  noteDiv.style.backgroundImage = `linear-gradient(180deg, ${noteToAdd._color} 0%, rgb(255, 255, 255) 10%)`;
   noteContentEl.appendChild(noteTitle);
   noteContentEl.appendChild(noteContent);
   let noteActions = document.createElement('div');
@@ -93,6 +95,7 @@ addNote.addEventListener('click', (e) => {
     }
   } else {
     const newNote = new Note(titleVal, colorVal, contentVal, 1);
+    notes.push(newNote);
     addToUI(newNote);
     addForm.style.display = 'none';
     fTitle.value = '';
@@ -101,4 +104,40 @@ addNote.addEventListener('click', (e) => {
   }
 
   e.preventDefault();
+});
+
+const viewForm = document.getElementById('view-form');
+const viewFormTitle = document.getElementById('view-form-title');
+const viewFormContent = document.getElementById('view-form-content');
+
+let titleInsideEdit;
+let contentInsideEdit;
+let colorInsideEdit;
+
+notesContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fa-trash-can')) {
+    e.target.parentElement.parentElement.parentElement.remove();
+  }
+
+  if (e.target.classList.contains('fa-pen-to-square')) {
+    viewForm.style.display = 'block';
+    for (let i = 0; i < notes.length; i++) {
+      titleInsideEdit = notes[i]._title;
+      contentInsideEdit = notes[i]._content;
+    }
+    viewFormTitle.value = titleInsideEdit;
+    viewFormContent.value = contentInsideEdit;
+    console.log(e.target);
+  }
+
+  if (e.target.classList.contains('view-cancel-btn')) {
+    viewForm.style.display = 'none';
+    e.preventDefault();
+  }
+
+  if (e.target.classList.contains('view-edit-btn')) {
+    console.log(e.target);
+    console.log('edit note');
+    e.preventDefault();
+  }
 });
