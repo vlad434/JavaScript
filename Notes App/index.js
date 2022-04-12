@@ -106,9 +106,15 @@ addNote.addEventListener('click', (e) => {
   e.preventDefault();
 });
 
-const viewForm = document.getElementById('view-form');
-const viewFormTitle = document.getElementById('view-form-title');
-const viewFormContent = document.getElementById('view-form-content');
+//VIEW FORM SELECTORS
+let viewForm = document.getElementById('view-form');
+let viewFormTitle = document.getElementById('view-form-title');
+let viewFormContent = document.getElementById('view-form-content');
+
+//EDIT FORM SELECTORS
+let editForm = document.getElementById('edit-form');
+let editFormTitle = document.getElementById('edit-form-title');
+let editFormContent = document.getElementById('edit-form-content');
 
 let titleInsideEdit;
 let contentInsideEdit;
@@ -126,18 +132,39 @@ notesContainer.addEventListener('click', (e) => {
       contentInsideEdit = notes[i]._content;
     }
     viewFormTitle.value = titleInsideEdit;
+    viewFormTitle.disabled = 'true';
     viewFormContent.value = contentInsideEdit;
-    console.log(e.target);
-  }
+    viewFormContent.disabled = 'true';
 
-  if (e.target.classList.contains('view-cancel-btn')) {
-    viewForm.style.display = 'none';
-    e.preventDefault();
+    editFormTitle.value = titleInsideEdit;
+    editFormContent.value = contentInsideEdit;
   }
+});
 
-  if (e.target.classList.contains('view-edit-btn')) {
-    console.log(e.target);
-    console.log('edit note');
-    e.preventDefault();
-  }
+const viewCancelBtn = document.querySelector('.view-cancel-btn');
+const viewEditBtn = document.querySelector('.view-edit-btn');
+const editCancelBtn = document.querySelector('.edit-cancel-btn');
+const saveChangesBtn = document.querySelector('.save-changes-btn');
+
+viewCancelBtn.addEventListener('click', (e) => {
+  viewForm.style.display = 'none';
+  e.preventDefault();
+});
+
+viewEditBtn.addEventListener('click', (e) => {
+  viewForm.style.display = 'none';
+  editForm.style.display = 'block';
+  e.preventDefault();
+});
+
+editCancelBtn.addEventListener('click', (e) => {
+  editForm.style.display = 'none';
+  viewForm.style.display = 'block';
+  e.preventDefault();
+});
+
+saveChangesBtn.addEventListener('click', (e) => {
+  console.log(notes);
+  editForm.style.display = 'none';
+  e.preventDefault();
 });

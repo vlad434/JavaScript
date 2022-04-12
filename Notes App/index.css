@@ -44,7 +44,8 @@ header {
 }
 
 .input-form,
-.view-form {
+.view-form,
+.edit-form {
   z-index: 99;
   position: absolute;
   top: 2rem;
@@ -55,7 +56,9 @@ header {
 .input-form input,
 .input-form textarea,
 .view-form input,
-.view-form textarea {
+.view-form textarea,
+.edit-form input,
+.edit-form textarea {
   width: 95%;
   height: 1.5rem;
   border-radius: 1rem;
@@ -88,7 +91,8 @@ input[type='color'] {
 }
 
 .form-actions,
-.view-form-actions {
+.view-form-actions,
+.edit-form-actions {
   position: absolute;
   bottom: 1rem;
   width: 90%;

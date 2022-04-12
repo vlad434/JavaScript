@@ -51,7 +51,7 @@
       <form class="form view-form" id="view-form" style="display: none">
         <div class="area view-form-title">
           <label for="view-form-title">Title: </label>
-          <input type="text" id="view-form-title" disabled="true" />
+          <input type="text" id="view-form-title" />
         </div>
         <div class="area view-form-content">
           <label for="view-form-content">Content: </label>
@@ -60,12 +60,30 @@
             cols="30"
             rows="10"
             spellcheck="false"
-            disabled="true"
           ></textarea>
         </div>
         <div class="view-form-actions">
           <button class="btn view-cancel-btn">Cancel</button>
           <button class="btn view-edit-btn">Edit</button>
+        </div>
+      </form>
+      <form class="form edit-form" id="edit-form" style="display: none">
+        <div class="area edit-form-title">
+          <label for="edit-form-title">Title: </label>
+          <input type="text" id="edit-form-title" />
+        </div>
+        <div class="area edit-form-content">
+          <label for="edit-form-content">Content: </label>
+          <textarea
+            id="edit-form-content"
+            cols="30"
+            rows="10"
+            spellcheck="false"
+          ></textarea>
+        </div>
+        <div class="edit-form-actions">
+          <button class="btn edit-cancel-btn">Cancel</button>
+          <button class="btn save-changes-btn">Save</button>
         </div>
       </form>
     </div>
