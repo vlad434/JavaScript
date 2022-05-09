@@ -24,7 +24,6 @@ addBtn.addEventListener('click', (e) => {
 
 cancelBtn.addEventListener('click', (e) => {
   addForm.style.display = 'none';
-  console.log('cancel clicked');
   e.preventDefault();
 });
 
@@ -102,7 +101,7 @@ addNote.addEventListener('click', (e) => {
     fColor.value = '#000000';
     fContent.value = '';
   }
-
+  console.log(notes);
   e.preventDefault();
 });
 
@@ -118,7 +117,6 @@ let editFormContent = document.getElementById('edit-form-content');
 
 let titleInsideEdit;
 let contentInsideEdit;
-let colorInsideEdit;
 
 notesContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-trash-can')) {
@@ -126,45 +124,34 @@ notesContainer.addEventListener('click', (e) => {
   }
 
   if (e.target.classList.contains('fa-pen-to-square')) {
-    viewForm.style.display = 'block';
-    for (let i = 0; i < notes.length; i++) {
-      titleInsideEdit = notes[i]._title;
-      contentInsideEdit = notes[i]._content;
-    }
-    viewFormTitle.value = titleInsideEdit;
-    viewFormTitle.disabled = 'true';
-    viewFormContent.value = contentInsideEdit;
-    viewFormContent.disabled = 'true';
+    editForm.style.display = 'block';
 
-    editFormTitle.value = titleInsideEdit;
-    editFormContent.value = contentInsideEdit;
+    for (let i = 0; i < notes.length; i++) {
+      editFormTitle.value = notes[i]._title;
+      editFormContent.value = notes[i]._content;
+    }
   }
 });
 
-const viewCancelBtn = document.querySelector('.view-cancel-btn');
-const viewEditBtn = document.querySelector('.view-edit-btn');
 const editCancelBtn = document.querySelector('.edit-cancel-btn');
 const saveChangesBtn = document.querySelector('.save-changes-btn');
 
-viewCancelBtn.addEventListener('click', (e) => {
-  viewForm.style.display = 'none';
-  e.preventDefault();
-});
-
-viewEditBtn.addEventListener('click', (e) => {
-  viewForm.style.display = 'none';
-  editForm.style.display = 'block';
-  e.preventDefault();
-});
-
 editCancelBtn.addEventListener('click', (e) => {
   editForm.style.display = 'none';
-  viewForm.style.display = 'block';
   e.preventDefault();
 });
 
 saveChangesBtn.addEventListener('click', (e) => {
+  for (let i = 0; i < notes.length; i++) {
+    notes[i]._title = editFormTitle.value;
+    notes[i]._content = editFormContent.value;
+  }
+  notes[0]._title = editFormTitle.value;
+  // notes._title = titleAfterEdit;
+  // notes._content = contentAfterEdit;
+
   console.log(notes);
+
   editForm.style.display = 'none';
   e.preventDefault();
 });
