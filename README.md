@@ -39,7 +39,7 @@
 #| Name  |  Live Demo | Status |
 ---- | ------------- | ------------- |------------- |
 01 | [Array Loop Methods](https://github.com/vlad434/JavaScript/tree/master/Array%20Loop%20Methods) | https://vlad434-array-loop-methods.netlify.app | DONE  |
-02 | [Hangman](https://github.com/vlad434/JavaScript/tree/master/Hang-man) | https://vlad434-hangman.netlify.app | almost done  |
+02 | [Hangman](https://github.com/vlad434/JavaScript/tree/master/Hang-man) | https://vlad434-hangman.netlify.app | DONE |
 03 | [Movie Seat Booking](https://github.com/vlad434/JavaScript/tree/master/Movie%20Seat%20Booking)  | https://vlad434-movie-seat-booking.netlify.app | DONE | 
 04 | [Speed Typing](https://github.com/vlad434/JavaScript/tree/master/Speed%20Typing) | https://vlad434-speed-typing.netlify.app | in progress..  |
 05 | [Random Number Guessing(Speech Recognition)](https://github.com/vlad434/JavaScript/tree/master/Random%20Number%20Guessing(Speech%20Recognition)) | https://vlad434-random-number-guess-speech-recognition.netlify.app/ | DONE |
