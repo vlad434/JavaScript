@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Josefin+Sans&family=Lato:wght@100&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Snake</title>
+  </head>
+  <body>
+    <!-- meniul de inceput XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <div class="first-menu">
+      <h1 class="title">Snake</h1>
+      <button class="play-btn btn">Play</button>
+    </div>
+
+    <!-- scorul de sus FACUT-->
+    <div class="score" id="score" style="display: none">
+      Score: <span class="score-num">0</span>
+    </div>
+
+    <!-- meniul de butoane -->
+    <div class="buttons" style="display: none">
+      <i class="fa-solid fa-pause"></i>
+    </div>
+
+    <!-- tabla de joc FACUT -->
+    <div id="game-board" class="game-board" style="display: none"></div>
+
+    <!-- meniul de pauza FACUT -->
+    <div class="pause-menu" style="display: none">
+      <h1 class="pause">Pause</h1>
+      <div class="continue-btn btn">Continue</div>
+      <div class="restart-btn btn" id="reset-btn">Reset</div>
+    </div>
+
+    <!-- meniul de final FACUT -->
+    <div class="final-menu" style="display: none">
+      <h1 class="game-over">Game Over</h1>
+      <div>Your score: <span class="final-score">12</span></div>
+      <div class="reset-btn btn">Reset</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
