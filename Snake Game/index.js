@@ -1,7 +1,8 @@
 // const mainMenu = document.querySelector('.first-menu');
 const finalMenu = document.querySelector('.final-menu');
 const gameBoard = document.getElementById('game-board');
-const scoreEl = document.querySelector('.score-num');
+const scoreEl = document.querySelector('.score');
+const scoreNum = document.querySelector('.score-num');
 const pauseMenu = document.querySelector('.pause-menu');
 const finalScore = document.querySelector('.final-score');
 const playBtn = document.querySelector('.play-btn');
@@ -16,14 +17,13 @@ let food;
 let snake = [];
 let head;
 const tileSize = 10;
-const width = gameBoard.getBoundingClientRect().width;
-const height = gameBoard.getBoundingClientRect().height;
+// const width = gameBoard.getBoundingClientRect().width;
+// const height = gameBoard.getBoundingClientRect().height;
+const width = 1285;
+const height = 535;
 let score = 0;
 let gameIsOn = false;
 let Session;
-if (gameIsOn) {
-  Session = setInterval(gameLoop, interval);
-}
 
 // document.addEventListener('DOMContentLoaded', onLoad);
 document.addEventListener('keydown', onKeyDown);
@@ -33,8 +33,9 @@ playBtn.addEventListener('click', () => {
   console.log('play');
   gameBoard.style.display = 'block';
   scoreEl.style.display = 'flex';
+  scoreNum.style.display = 'flex';
   pauseBtn.style.display = 'flex';
-  Session = setInterval(gameLoop, interval); //??????
+  onReset();
 });
 
 function onReset() {
@@ -44,17 +45,17 @@ function onReset() {
   snake.length = 0;
   interval = 100;
   score = 0;
-  scoreEl.innerText = 0;
+  scoreNum.innerText = 0;
   direction = 'right';
   createSnake(50, 200);
   spamFood();
+  gameBoard.style.transform = 'scale(1)';
   Session = setInterval(gameLoop, interval);
 }
 
 function onLoad() {
-  // mainMenu.style.display = 'none';
-  // gameBoard.style.display = 'block';
   scoreEl.style.display = 'flex';
+  scoreNum.style.display = 'flex';
   createSnake(50, 200);
   spamFood();
 }
@@ -64,7 +65,7 @@ function stopSession(time) {
 }
 
 function createSnake(top, left) {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 1; i++) {
     let div = document.createElement('div');
     div.classList.add('snake');
     div.style.left = `${left}px`;
@@ -88,6 +89,20 @@ resetBreak.addEventListener('click', () => {
   pauseMenu.style.display = 'none';
   pauseBtn.style.display = 'flex';
 });
+
+function winCondition() {
+  if (score == 5) {
+    interval -= 5;
+    gameBoard.style.transform = 'scale(0.95)';
+  }
+  if (score == 10) {
+    console.log('screen shrinking');
+    gameBoard.style.transform = 'scale(0.90)';
+  }
+  if (score == 15) {
+    interval -= 10;
+  }
+}
 
 function gameLoop() {
   let TOP = parseInt(head.style.top);
@@ -118,7 +133,8 @@ function gameLoop() {
     snake.splice(1, 0, food);
     spamFood();
     score++;
-    scoreEl.innerText = `${score}`;
+    winCondition();
+    scoreNum.innerText = `${score}`;
   }
   head.style.top = `${TOP}px`;
   head.style.left = `${LEFT}px`;
@@ -147,7 +163,6 @@ function gameOver(t, l) {
     }
   }
   return t >= height || t <= 0 || l <= 0 || l >= width;
-  //   revazut
 }
 
 function spamFood() {

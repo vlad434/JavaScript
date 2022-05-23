@@ -4,7 +4,7 @@
 
 html,
 body {
-  background-color: rgb(12, 121, 12);
+  background-color: rgb(20, 89, 154);
   width: 100%;
   height: 100%;
   margin: 0;
@@ -17,10 +17,12 @@ body {
 
 .game-board {
   background-color: rgb(182, 180, 180);
-  width: 90vw;
-  height: 70vh;
-  border: 1px solid black;
+  width: 1300px;
+  height: 550px;
+  border: 15px solid rgba(0, 0, 0, 0.607);
+  border-radius: 2rem;
   position: relative;
+  transition: 0.6s ease-in;
 }
 
 .game-board div:first-child {
