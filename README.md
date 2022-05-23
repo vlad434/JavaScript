@@ -43,5 +43,5 @@
 03 | [Movie Seat Booking](https://github.com/vlad434/JavaScript/tree/master/Movie%20Seat%20Booking)  | https://vlad434-movie-seat-booking.netlify.app | DONE | 
 04 | [Speed Typing](https://github.com/vlad434/JavaScript/tree/master/Speed%20Typing) | https://vlad434-speed-typing.netlify.app | in progress..  |
 05 | [Random Number Guessing(Speech Recognition)](https://github.com/vlad434/JavaScript/tree/master/Random%20Number%20Guessing(Speech%20Recognition)) | https://vlad434-random-number-guess-speech-recognition.netlify.app/ | DONE |
-06 |Snake Game](https://github.com/vlad434/JavaScript/tree/master/Snake%20Game)) | https://vlad434-snake.netlify.app/ | in progress.. |
+06 |Snake Game](https://github.com/vlad434/JavaScript/tree/master/Snake%20Game) | https://vlad434-snake.netlify.app/ | in progress.. |
  
