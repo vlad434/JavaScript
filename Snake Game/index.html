@@ -20,33 +20,35 @@
     <title>Snake</title>
   </head>
   <body>
-    <!-- meniul de inceput XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <div class="back-background"></div>
+    <!-- start menu -->
     <div class="first-menu">
       <h1 class="title">Snake</h1>
       <button class="play-btn btn">Play</button>
     </div>
 
-    <!-- scorul de sus FACUT-->
+    <!-- upside score-->
     <div class="score" id="score" style="display: none">
       Score: <span class="score-num">0</span>
     </div>
 
-    <!-- meniul de butoane -->
+    <!-- menu with pause button -->
     <div class="buttons" style="display: none">
       <i class="fa-solid fa-pause"></i>
     </div>
 
-    <!-- tabla de joc FACUT -->
+    <!-- game board -->
     <div id="game-board" class="game-board" style="display: none"></div>
 
-    <!-- meniul de pauza FACUT -->
+    <!-- pause menu -->
     <div class="pause-menu" style="display: none">
       <h1 class="pause">Pause</h1>
       <div class="continue-btn btn">Continue</div>
       <div class="restart-btn btn" id="reset-btn">Reset?</div>
+      <div class="to-menu btn">Main menu</div>
     </div>
 
-    <!-- meniul de final FACUT -->
+    <!-- game over menu -->
     <div class="final-menu" style="display: none">
       <h1 class="game-over">Game Over</h1>
       <div>Your score: <span class="final-score">12</span></div>

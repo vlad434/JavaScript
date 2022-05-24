@@ -1,46 +1,48 @@
-// const mainMenu = document.querySelector('.first-menu');
-const finalMenu = document.querySelector('.final-menu');
-const gameBoard = document.getElementById('game-board');
-const scoreEl = document.querySelector('.score');
-const scoreNum = document.querySelector('.score-num');
-const pauseMenu = document.querySelector('.pause-menu');
-const finalScore = document.querySelector('.final-score');
-const playBtn = document.querySelector('.play-btn');
-const resetBtn = document.querySelector('.reset-btn');
-const resetBreak = document.querySelector('.restart-btn');
-const pauseBtn = document.querySelector('.buttons');
-const continueBtn = document.querySelector('.continue-btn');
+const backSide = document.querySelector('.back-background'),
+  mainMenu = document.querySelector('.first-menu'),
+  toMenu = document.querySelector('.to-menu'),
+  finalMenu = document.querySelector('.final-menu'),
+  pauseMenu = document.querySelector('.pause-menu'),
+  gameBoard = document.getElementById('game-board'),
+  scoreEl = document.querySelector('.score'),
+  scoreNum = document.querySelector('.score-num'),
+  finalScore = document.querySelector('.final-score'),
+  pauseBtn = document.querySelector('.buttons'),
+  playBtn = document.querySelector('.play-btn'),
+  resetBtn = document.querySelector('.reset-btn'),
+  resetBreak = document.querySelector('.restart-btn'),
+  continueBtn = document.querySelector('.continue-btn');
 
 let direction = 'right';
 let interval = 100;
 let food;
+let wall;
 let snake = [];
 let head;
 const tileSize = 10;
-// const width = gameBoard.getBoundingClientRect().width;
-// const height = gameBoard.getBoundingClientRect().height;
 const width = 1285;
-const height = 535;
+const height = 490;
 let score = 0;
 let gameIsOn = false;
 let Session;
 
-// document.addEventListener('DOMContentLoaded', onLoad);
 document.addEventListener('keydown', onKeyDown);
 resetBtn.addEventListener('click', onReset);
 
 playBtn.addEventListener('click', () => {
-  console.log('play');
   gameBoard.style.display = 'block';
   scoreEl.style.display = 'flex';
   scoreNum.style.display = 'flex';
   pauseBtn.style.display = 'flex';
+  mainMenu.style.display = 'none';
   onReset();
+  backSide.style.display = 'none';
 });
 
 function onReset() {
   finalMenu.style.display = 'none';
   pauseBtn.style.display = 'flex';
+  backSide.style.display = 'none';
   gameBoard.innerHTML = '';
   snake.length = 0;
   interval = 100;
@@ -49,6 +51,7 @@ function onReset() {
   direction = 'right';
   createSnake(50, 200);
   spamFood();
+  // spamWall();
   gameBoard.style.transform = 'scale(1)';
   Session = setInterval(gameLoop, interval);
 }
@@ -58,6 +61,7 @@ function onLoad() {
   scoreNum.style.display = 'flex';
   createSnake(50, 200);
   spamFood();
+  spamWall();
 }
 
 function stopSession(time) {
@@ -77,32 +81,50 @@ function createSnake(top, left) {
   head = snake[0];
 }
 
+function winCondition() {
+  switch (score) {
+    case 10:
+      gameBoard.style.transform = 'scale(0.95)';
+      break;
+    case 20:
+      gameBoard.style.transform = 'scale(0.90)';
+      break;
+  }
+}
+
 pauseBtn.addEventListener('click', () => {
   pauseBtn.style.display = 'none';
   stopSession(Session);
   gameIsOn = false;
   pauseMenu.style.display = 'flex';
+  backSide.style.display = 'flex';
+});
+
+continueBtn.addEventListener('click', () => {
+  Session = setInterval(gameLoop, interval);
+  pauseMenu.style.display = 'none';
+  pauseBtn.style.display = 'flex';
+  backSide.style.display = 'none';
 });
 
 resetBreak.addEventListener('click', () => {
   onReset();
   pauseMenu.style.display = 'none';
   pauseBtn.style.display = 'flex';
+  backSide.style.display = 'none';
 });
 
-function winCondition() {
-  if (score == 5) {
-    interval -= 5;
-    gameBoard.style.transform = 'scale(0.95)';
-  }
-  if (score == 10) {
-    console.log('screen shrinking');
-    gameBoard.style.transform = 'scale(0.90)';
-  }
-  if (score == 15) {
-    interval -= 10;
-  }
-}
+toMenu.addEventListener('click', () => {
+  gameBoard.style.display = 'none';
+  scoreEl.style.display = 'none';
+  scoreNum.style.display = 'none';
+  pauseBtn.style.display = 'none';
+  mainMenu.style.display = 'flex';
+  pauseMenu.style.display = 'none';
+  mainMenu.style.display = 'flex';
+  backSide.style.display = 'flex';
+  stopSession(Session);
+});
 
 function gameLoop() {
   let TOP = parseInt(head.style.top);
@@ -111,8 +133,10 @@ function gameLoop() {
     stopSession(Session);
     finalMenu.style.display = 'flex';
     finalScore.innerText = score;
+    backSide.style.display = 'flex';
     return;
   }
+
   head.oldT = TOP;
   head.oldL = LEFT;
   switch (direction) {
@@ -136,6 +160,7 @@ function gameLoop() {
     winCondition();
     scoreNum.innerText = `${score}`;
   }
+
   head.style.top = `${TOP}px`;
   head.style.left = `${LEFT}px`;
 
@@ -150,12 +175,6 @@ function gameLoop() {
   }
 }
 
-continueBtn.addEventListener('click', () => {
-  Session = setInterval(gameLoop, interval);
-  pauseMenu.style.display = 'none';
-  pauseBtn.style.display = 'flex';
-});
-
 function gameOver(t, l) {
   for (let i = 1; i < snake.length; i++) {
     if (snake[i].offsetLeft == l && snake[i].offsetTop == t) {
@@ -167,6 +186,7 @@ function gameOver(t, l) {
 
 function spamFood() {
   let d = document.createElement('div');
+  d.classList.add('food');
   let t = 10 * genNumber(0, height / 10 - 1);
   let l = 10 * genNumber(0, width / 10 - 1);
   d.style.top = `${t}px`;

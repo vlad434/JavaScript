@@ -16,12 +16,13 @@ body {
 }
 
 .game-board {
-  background-color: rgb(182, 180, 180);
   width: 1300px;
-  height: 550px;
-  border: 15px solid rgba(0, 0, 0, 0.607);
+  height: 500px;
+  background-color: rgb(182, 180, 180);
   border-radius: 2rem;
+  border: 15px solid rgba(0, 0, 0, 0.607);
   position: relative;
+  z-index: 2;
   transition: 0.6s ease-in;
 }
 
@@ -30,15 +31,16 @@ body {
 }
 
 .food {
-  background-color: red;
+  border-radius: 50%;
 }
+
 .game-board div {
   border: 1px solid black;
   width: 10px;
   height: 10px;
   position: absolute;
   display: inline-block;
-  background-color: green;
+  background-color: rgb(8, 225, 8);
 }
 
 .score {
@@ -85,9 +87,8 @@ body {
 .first-menu,
 .pause-menu,
 .final-menu {
-  height: 25vh;
-  width: 25vw;
   padding: 15px;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -95,6 +96,37 @@ body {
   border-radius: 1.5rem;
   border: 2px solid black;
   position: absolute;
-  background-color: rgb(161, 161, 161);
+  background-color: rgba(161, 161, 161, 0.353);
   box-shadow: 0px 0px 19px 7px #000000;
+}
+
+.first-menu {
+  height: 25vh;
+  width: 25vw;
+  justify-content: space-around;
+}
+
+.pause-menu {
+  height: 35vh;
+  width: 22vw;
+  justify-content: space-around;
+}
+
+.final-menu {
+  height: 30vh;
+  width: 22vw;
+  justify-content: space-around;
+}
+
+.play-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.back-background {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(85, 85, 85, 0.579);
 }
