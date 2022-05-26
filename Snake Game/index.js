@@ -45,14 +45,13 @@ function onReset() {
   backSide.style.display = 'none';
   gameBoard.innerHTML = '';
   snake.length = 0;
-  interval = 100;
   score = 0;
   scoreNum.innerText = 0;
   direction = 'right';
   createSnake(50, 200);
   spamFood();
-  // spamWall();
   gameBoard.style.transform = 'scale(1)';
+  interval = 100;
   Session = setInterval(gameLoop, interval);
 }
 
@@ -83,11 +82,23 @@ function createSnake(top, left) {
 
 function winCondition() {
   switch (score) {
-    case 10:
+    case 4:
+      gameBoard.style.transform = 'scale(0.975)';
+      break;
+    case 8:
       gameBoard.style.transform = 'scale(0.95)';
       break;
+    case 12:
+      gameBoard.style.transform = 'scale(0.9)';
+      break;
+    case 16:
+      gameBoard.style.transform = 'scale(0.865)';
+      break;
     case 20:
-      gameBoard.style.transform = 'scale(0.90)';
+      gameBoard.style.transform = 'scale(0.835)';
+      break;
+    case 24:
+      gameBoard.style.transform = 'scale(0.8)';
       break;
   }
 }
@@ -95,7 +106,6 @@ function winCondition() {
 pauseBtn.addEventListener('click', () => {
   pauseBtn.style.display = 'none';
   stopSession(Session);
-  gameIsOn = false;
   pauseMenu.style.display = 'flex';
   backSide.style.display = 'flex';
 });
