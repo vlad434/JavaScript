@@ -13,29 +13,6 @@ let picture1, picture2;
 let busy = false; //ascunde ambele cartonase dupa 1 sec
 let moves = 0;
 
-levelBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    if (btn.textContent === 'easy') {
-      console.log('easy');
-      generateCards(4, 4);
-      gameBoard.style.display = 'grid';
-      gameBoard.style.gridTemplateColumns = 'repeat(4, auto)';
-    } else if (btn.textContent === 'medium') {
-      console.log('medium');
-      generateCards(6, 6);
-      gameBoard.style.display = 'grid';
-      gameBoard.style.gridTemplateColumns = 'repeat(6, auto)';
-    } else {
-      console.log('hard');
-      generateCards(8, 8);
-      gameBoard.style.display = 'grid';
-      gameBoard.style.gridTemplateColumns = 'repeat(8, auto)';
-    }
-    gameIsOn = true;
-    mainMenu.style.display = 'none';
-  });
-});
-
 gameBoard.addEventListener('click', onImageClick);
 
 function generateCards(l, c) {
@@ -96,3 +73,35 @@ function onImageClick(e) {
     }
   }
 }
+
+levelBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    gameBoard.style.display = 'grid';
+
+    if (btn.textContent === 'easy') {
+      gameBoard.style.gridTemplateColumns = 'repeat(4, auto)';
+      generateCards(4, 4);
+
+      document.querySelectorAll('img').forEach((image) => {
+        image.style.width = `calc(100vw / 4)`;
+        image.style.height = `calc(100vh / 4)`;
+      });
+    } else if (btn.textContent === 'medium') {
+      gameBoard.style.gridTemplateColumns = 'repeat(6, auto)';
+      generateCards(6, 6);
+      document.querySelectorAll('img').forEach((image) => {
+        image.style.width = `calc(100vw / 6)`;
+        image.style.height = `calc(100vh / 6)`;
+      });
+    } else {
+      gameBoard.style.gridTemplateColumns = 'repeat(8, auto)';
+      generateCards(8, 8);
+      document.querySelectorAll('img').forEach((image) => {
+        image.style.width = `calc(100vw / 8)`;
+        image.style.height = `calc(100vh / 8)`;
+      });
+    }
+    gameIsOn = true;
+    mainMenu.style.display = 'none';
+  });
+});
