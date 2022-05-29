@@ -3,21 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card Memory Game</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
   </head>
   <body>
-    <div>Moves: <span id="score">0</span></div>
-    <div class="container"></div>
-    <button id="btnReset" disabled>Reset</button>
+    <div class="main-menu">
+      <div class="box">
+        <div class="box-inner">
+          <div class="front">f</div>
+          <div class="back results">fb</div>
+        </div>
+      </div>
+      <div class="box mirror">l</div>
+      <div class="box">
+        <div class="box-inner">
+          <div class="front">i</div>
+          <div class="back instructions">
+            <p>
+              Flip is a timed card memory game. Click the green cards to see
+              what symbol they uncover and try to find the matching symbol
+              underneath the other cards.
+            </p>
+            <p>
+              Uncover two matching symbols at once to eliminate them from the
+              game.
+            </p>
+            <p>
+              Eliminate all cards as fast as you can to win the game. Have fun
+              FLIPing!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="play">
+        <div class="box-inner">
+          <div class="front">p</div>
+          <div class="back play">
+            <button id="play-easy">easy</button>
+            <button id="play-medium">medium</button>
+            <button id="play-hard">hard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-container" style="display: none"></div>
     <script src="index.js"></script>
   </body>
 </html>

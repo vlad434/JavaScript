@@ -1,26 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: rgb(78, 77, 77);
 }
 
-.container {
-  margin: 1rem;
+.main-menu {
+  padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.container img {
-  width: 60px;
-  height: 60px;
-  border: 1px solid black;
+.box {
+  width: 15rem;
+  height: 15rem;
+  border: 2px solid black;
+  font-size: 8rem;
+  text-transform: uppercase;
+  background-color: rgb(11, 187, 119);
+  color: #fff;
+  transition: all 0.7s ease;
+}
+
+.mirror {
+  background-color: rgb(155, 40, 40);
+  transform: scaleX(-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box:hover:not(:nth-child(2)) {
   cursor: pointer;
+  background-color: rgb(5, 124, 78);
 }
 
-#score {
-  height: 2rem;
-  color: black;
+.box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.box:hover .box-inner {
+  transform: rotateY(180deg);
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: rgb(155, 40, 40);
+  transform: rotateY(180deg);
+  font-size: 2rem;
+}
+
+.instructions {
+  text-transform: none;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.play {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.play button {
+  width: 100%;
+  height: 33.3%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+}
+
+.game-container {
+  width: 99%;
+  height: 99%;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  background-color: yellow;
+  border: 2px solid black;
+}
+
+.card {
+  width: 23vw;
+  height: 23vh;
+  background-color: rgb(0, 0, 255);
+  border: 2px solid black;
 }
