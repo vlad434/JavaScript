@@ -38,7 +38,11 @@
       </div>
       <div class="box" id="play">
         <div class="box-inner">
-          <div class="front">p</div>
+          <div class="front">
+            <div class="box-inner">
+              <div class="front">p</div>
+            </div>
+          </div>
           <div class="back play">
             <button id="play-easy">easy</button>
             <button id="play-medium">medium</button>
@@ -48,6 +52,86 @@
       </div>
     </div>
     <div class="game-container" style="display: none"></div>
+
+    <div class="fail-menu" style="display: none">
+      <div class="box">
+        <div class="box-inner">
+          <div class="front">f</div>
+          <div class="back results">fb</div>
+        </div>
+      </div>
+      <div class="box mirror">a</div>
+      <div class="box">
+        <div class="box-inner">
+          <div class="front">i</div>
+          <div class="back instructions">
+            <p>
+              Flip is a timed card memory game. Click the green cards to see
+              what symbol they uncover and try to find the matching symbol
+              underneath the other cards.
+            </p>
+            <p>
+              Uncover two matching symbols at once to eliminate them from the
+              game.
+            </p>
+            <p>
+              Eliminate all cards as fast as you can to win the game. Have fun
+              FLIPing!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="play">
+        <div class="box-inner">
+          <div class="front">l</div>
+          <div class="back play">
+            <button id="play-easy">easy</button>
+            <button id="play-medium">medium</button>
+            <button id="play-hard">hard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="win-menu" style="display: none">
+      <div class="box">
+        <div class="box-inner">
+          <div class="front">n</div>
+          <div class="back results">fb</div>
+        </div>
+      </div>
+      <div class="box mirror">i</div>
+      <div class="box">
+        <div class="box-inner">
+          <div class="front">c</div>
+          <div class="back instructions">
+            <p>
+              Flip is a timed card memory game. Click the green cards to see
+              what symbol they uncover and try to find the matching symbol
+              underneath the other cards.
+            </p>
+            <p>
+              Uncover two matching symbols at once to eliminate them from the
+              game.
+            </p>
+            <p>
+              Eliminate all cards as fast as you can to win the game. Have fun
+              FLIPing!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="win-play-again">
+        <div class="box-inner">
+          <div class="front">e</div>
+          <div class="back play">
+            <button id="win-play-easy">easy</button>
+            <button id="win-play-medium">medium</button>
+            <button id="win-play-hard">hard</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

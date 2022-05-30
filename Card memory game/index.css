@@ -12,21 +12,67 @@ body {
   background-color: rgb(78, 77, 77);
 }
 
-.main-menu {
+.main-menu,
+.win-menu,
+.fail-menu {
   padding: 1rem;
   display: grid;
+  grid-gap: 0.09rem;
   grid-template-columns: repeat(2, 1fr);
+  transition: 0.6s ease-in-out;
 }
 
 .box {
-  width: 15rem;
-  height: 15rem;
-  border: 2px solid black;
+  width: 12rem;
+  height: 12rem;
   font-size: 8rem;
   text-transform: uppercase;
-  background-color: rgb(11, 187, 119);
   color: #fff;
   transition: all 0.7s ease;
+  background-color: transparent;
+}
+
+.box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* .box:hover .box-inner {
+  transform: rotateY(180deg);
+} */
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front {
+  background-color: rgb(11, 187, 119);
+  color: black;
+}
+
+.back {
+  background-color: rgb(155, 40, 40);
+  color: white;
+  transform: rotateY(180deg);
+  font-size: 2rem;
 }
 
 .mirror {
@@ -37,51 +83,9 @@ body {
   align-items: center;
 }
 
-.box:hover:not(:nth-child(2)) {
-  cursor: pointer;
-  background-color: rgb(5, 124, 78);
-}
-
-.box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.box:hover .box-inner {
-  transform: rotateY(180deg);
-}
-
-.front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-}
-
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  background-color: rgb(155, 40, 40);
-  transform: rotateY(180deg);
-  font-size: 2rem;
-}
-
 .instructions {
   text-transform: none;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   text-align: center;
 }
 
@@ -113,5 +117,5 @@ body {
 .card {
   object-fit: contain;
   background-color: rgb(11, 187, 119);
-  border: 2px solid black;
+  border: 1px solid black;
 }

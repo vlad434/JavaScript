@@ -1,17 +1,36 @@
-const playBtn = document.getElementById('play');
-const mainMenu = document.querySelector('.main-menu');
-const easyBtn = document.getElementById('play-easy');
-const mediumBtn = document.getElementById('play-medium');
-const hardBtn = document.getElementById('play-hard');
+const playBtn = document.getElementById('play'),
+  mainMenu = document.querySelector('.main-menu'),
+  failMenu = document.querySelector('.fail-menu'),
+  winMenu = document.querySelector('.win-menu'),
+  easyBtn = document.getElementById('play-easy'),
+  mediumBtn = document.getElementById('play-medium'),
+  hardBtn = document.getElementById('play-hard'),
+  winEasyBtn = document.getElementById('win-play-easy'),
+  winMediumBtn = document.getElementById('win-play-medium'),
+  winHardBtn = document.getElementById('win-play-hard');
+
+const boxes = document.querySelectorAll('.box .box-inner');
+
+boxes.forEach((box) => {
+  box.addEventListener('click', () => {
+    if (box.classList.contains('flip')) {
+      box.classList.remove('flip');
+    } else {
+      box.classList.add('flip');
+    }
+  });
+});
 
 const gameBoard = document.querySelector('.game-container');
 
-let levelBtns = [easyBtn, mediumBtn, hardBtn];
-let gameIsOn = false;
-let okPairs = 0;
-let picture1, picture2;
-let busy = false; //ascunde ambele cartonase dupa 1 sec
-let moves = 0;
+let winLevelBtns = [winEasyBtn, winMediumBtn, winHardBtn],
+  levelBtns = [easyBtn, mediumBtn, hardBtn],
+  gameIsOn = false,
+  okPairs = 0,
+  picture1,
+  picture2,
+  busy = false,
+  moves = 0;
 
 gameBoard.addEventListener('click', onImageClick);
 
@@ -39,6 +58,65 @@ function generateNum(min, max) {
   return Math.ceil(min + Math.random() * (max - min));
 }
 
+function generateTiles(num) {
+  gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
+  generateCards(num, num);
+  winMenu.style.display = 'none';
+  document.querySelectorAll('img').forEach((image) => {
+    image.style.width = `calc(100vw / ${num})`;
+    image.style.height = `calc(100vh / ${num})`;
+  });
+}
+
+function onReset() {
+  winMenu.style.display = 'none';
+  gameBoard.style.display = 'grid';
+  okPairs = 0;
+  // resetBtn.disabled = true;
+  moves = 0;
+  gameBoard.innerHTML = '';
+  // // score.textContent = '0';
+  // generateCards(4, 4);
+}
+
+function generateTiles2(num) {
+  onReset();
+  gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
+  generateCards(num, num);
+  document.querySelectorAll('img').forEach((image) => {
+    image.style.width = `calc(100vw / ${num})`;
+    image.style.height = `calc(100vh / ${num})`;
+  });
+}
+
+levelBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    gameBoard.style.display = 'grid';
+
+    if (btn.textContent === 'easy') {
+      generateTiles(4);
+    } else if (btn.textContent === 'medium') {
+      generateTiles(6);
+    } else {
+      generateTiles(8);
+    }
+    gameIsOn = true;
+    mainMenu.style.display = 'none';
+  });
+});
+
+winLevelBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (btn.id == 'win-play-easy') {
+      generateTiles2(4);
+    } else if (btn.id == 'win-play-medium') {
+      generateTiles2(6);
+    } else {
+      generateTiles2(8);
+    }
+  });
+});
+
 function onImageClick(e) {
   let picture = e.target;
   if (!picture.hasOwnProperty('k')) return;
@@ -47,20 +125,20 @@ function onImageClick(e) {
 
   if (!picture1) {
     picture1 = picture;
-    picture1.setAttribute('src', `./img/${key}.png`);
+    picture1.setAttribute('src', `./img/${key}.PNG`);
   } else {
     picture2 = picture;
-    picture2.setAttribute('src', `./img/${key}.png`);
+    picture2.setAttribute('src', `./img/${key}.PNG`);
     moves++;
-    // score.textContent = moves.toString();
     if (picture1.k == picture2.k) {
       okPairs++;
       picture1.done = true;
       picture2.done = true;
       picture1 = picture2 = null;
-      if (okPairs == 8) {
+      if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
         console.log('congrats');
-        // resetBtn.disabled = false;
+        gameBoard.style.display = 'none';
+        winMenu.style.display = 'grid';
       }
     } else {
       busy = true;
@@ -73,35 +151,3 @@ function onImageClick(e) {
     }
   }
 }
-
-levelBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    gameBoard.style.display = 'grid';
-
-    if (btn.textContent === 'easy') {
-      gameBoard.style.gridTemplateColumns = 'repeat(4, auto)';
-      generateCards(4, 4);
-
-      document.querySelectorAll('img').forEach((image) => {
-        image.style.width = `calc(100vw / 4)`;
-        image.style.height = `calc(100vh / 4)`;
-      });
-    } else if (btn.textContent === 'medium') {
-      gameBoard.style.gridTemplateColumns = 'repeat(6, auto)';
-      generateCards(6, 6);
-      document.querySelectorAll('img').forEach((image) => {
-        image.style.width = `calc(100vw / 6)`;
-        image.style.height = `calc(100vh / 6)`;
-      });
-    } else {
-      gameBoard.style.gridTemplateColumns = 'repeat(8, auto)';
-      generateCards(8, 8);
-      document.querySelectorAll('img').forEach((image) => {
-        image.style.width = `calc(100vw / 8)`;
-        image.style.height = `calc(100vh / 8)`;
-      });
-    }
-    gameIsOn = true;
-    mainMenu.style.display = 'none';
-  });
-});
