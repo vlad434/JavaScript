@@ -1,4 +1,5 @@
-const playBtn = document.getElementById('play'),
+const gameBoard = document.querySelector('.game-container'),
+  playBtn = document.getElementById('play'),
   mainMenu = document.querySelector('.main-menu'),
   failMenu = document.querySelector('.fail-menu'),
   winMenu = document.querySelector('.win-menu'),
@@ -7,7 +8,13 @@ const playBtn = document.getElementById('play'),
   hardBtn = document.getElementById('play-hard'),
   winEasyBtn = document.getElementById('win-play-easy'),
   winMediumBtn = document.getElementById('win-play-medium'),
-  winHardBtn = document.getElementById('win-play-hard');
+  winHardBtn = document.getElementById('win-play-hard'),
+  failEasyBtn = document.getElementById('fail-play-easy'),
+  failMediumBtn = document.getElementById('fail-play-medium'),
+  failHardBtn = document.getElementById('fail-play-hard'),
+  timer = document.querySelector('.timer'),
+  timerMin = document.getElementById('timer-min'),
+  timerSec = document.getElementById('timer-sec');
 
 const boxes = document.querySelectorAll('.box .box-inner');
 
@@ -21,11 +28,9 @@ boxes.forEach((box) => {
   });
 });
 
-const gameBoard = document.querySelector('.game-container');
-
 let winLevelBtns = [winEasyBtn, winMediumBtn, winHardBtn],
+  failLevelBtns = [failEasyBtn, failMediumBtn, failHardBtn],
   levelBtns = [easyBtn, mediumBtn, hardBtn],
-  gameIsOn = false,
   okPairs = 0,
   picture1,
   picture2,
@@ -62,21 +67,20 @@ function generateTiles(num) {
   gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
   generateCards(num, num);
   winMenu.style.display = 'none';
+  // failMenu.style.display = 'none';
   document.querySelectorAll('img').forEach((image) => {
     image.style.width = `calc(100vw / ${num})`;
-    image.style.height = `calc(100vh / ${num})`;
+    image.style.height = `calc(97vh / ${num})`;
   });
 }
 
 function onReset() {
+  // failMenu.style.display = 'none';
   winMenu.style.display = 'none';
   gameBoard.style.display = 'grid';
   okPairs = 0;
-  // resetBtn.disabled = true;
   moves = 0;
   gameBoard.innerHTML = '';
-  // // score.textContent = '0';
-  // generateCards(4, 4);
 }
 
 function generateTiles2(num) {
@@ -85,20 +89,36 @@ function generateTiles2(num) {
   generateCards(num, num);
   document.querySelectorAll('img').forEach((image) => {
     image.style.width = `calc(100vw / ${num})`;
-    image.style.height = `calc(100vh / ${num})`;
+    image.style.height = `calc(95vh / ${num})`;
   });
+}
+
+function startTimer(time) {
+  timerSec.innerText = `${time}`;
+  let countDown = setInterval(() => {
+    time--;
+    timerSec.innerText = `${time}`;
+    console.log(time);
+    if (time <= 0) {
+      clearInterval(countDown);
+      console.log('game over');
+    }
+  }, 1000);
 }
 
 levelBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     gameBoard.style.display = 'grid';
-
     if (btn.textContent === 'easy') {
       generateTiles(4);
+      timer.style.display = 'block';
+      startTimer(30);
     } else if (btn.textContent === 'medium') {
       generateTiles(6);
+      startTimer(90);
     } else {
       generateTiles(8);
+      startTimer(180);
     }
     gameIsOn = true;
     mainMenu.style.display = 'none';
