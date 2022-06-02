@@ -12,9 +12,9 @@ const gameBoard = document.querySelector('.game-container'),
   failEasyBtn = document.getElementById('fail-play-easy'),
   failMediumBtn = document.getElementById('fail-play-medium'),
   failHardBtn = document.getElementById('fail-play-hard'),
-  timer = document.querySelector('.timer'),
-  timerMin = document.getElementById('timer-min'),
-  timerSec = document.getElementById('timer-sec');
+  progressBar = document.getElementById('progressBar'),
+  scoreWon = document.getElementById('gameWon'),
+  scoreLost = document.getElementById('gameLost');
 
 const boxes = document.querySelectorAll('.box .box-inner');
 
@@ -35,6 +35,8 @@ let winLevelBtns = [winEasyBtn, winMediumBtn, winHardBtn],
   picture1,
   picture2,
   busy = false,
+  gameWon = 0,
+  gameLost = 0,
   moves = 0;
 
 gameBoard.addEventListener('click', onImageClick);
@@ -67,7 +69,7 @@ function generateTiles(num) {
   gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
   generateCards(num, num);
   winMenu.style.display = 'none';
-  // failMenu.style.display = 'none';
+  failMenu.style.display = 'none';
   document.querySelectorAll('img').forEach((image) => {
     image.style.width = `calc(100vw / ${num})`;
     image.style.height = `calc(97vh / ${num})`;
@@ -75,7 +77,7 @@ function generateTiles(num) {
 }
 
 function onReset() {
-  // failMenu.style.display = 'none';
+  failMenu.style.display = 'none';
   winMenu.style.display = 'none';
   gameBoard.style.display = 'grid';
   okPairs = 0;
@@ -93,46 +95,85 @@ function generateTiles2(num) {
   });
 }
 
-function startTimer(time) {
-  timerSec.innerText = `${time}`;
-  let countDown = setInterval(() => {
-    time--;
-    timerSec.innerText = `${time}`;
-    console.log(time);
-    if (time <= 0) {
-      clearInterval(countDown);
-      console.log('game over');
-    }
-  }, 1000);
+let t = 0,
+  time;
+
+function timeHelper(sec) {
+  window.t = sec;
+  window.per = window.t;
+  timer();
+}
+
+function timer() {
+  time = window.t;
+  window.t--;
+  // console.log(time);
+  progressBar.style.width = (time * 100) / window.per + '%';
+  let t2 = setTimeout(timer, 1000);
+  if (time < 0) {
+    clearInterval(t2);
+    gameBoard.style.display = 'none';
+    failMenu.style.display = 'grid';
+    gameLost++;
+    scoreLost.textContent = gameLost;
+  }
+  if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
+    console.log('congrats');
+    progressBar.style.display = 'none';
+    clearInterval(t2);
+    gameBoard.style.display = 'none';
+    winMenu.style.display = 'grid';
+    gameWon++;
+    scoreWon.textContent = gameWon;
+  }
 }
 
 levelBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     gameBoard.style.display = 'grid';
+    progressBar.style.display = 'block';
     if (btn.textContent === 'easy') {
       generateTiles(4);
-      timer.style.display = 'block';
-      startTimer(30);
+      timeHelper(30);
     } else if (btn.textContent === 'medium') {
       generateTiles(6);
-      startTimer(90);
+      timeHelper(90);
     } else {
       generateTiles(8);
-      startTimer(180);
+      timeHelper(180);
     }
-    gameIsOn = true;
     mainMenu.style.display = 'none';
   });
 });
 
 winLevelBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
+    progressBar.style.display = 'block';
     if (btn.id == 'win-play-easy') {
       generateTiles2(4);
+      timeHelper(30);
     } else if (btn.id == 'win-play-medium') {
       generateTiles2(6);
+      timeHelper(90);
     } else {
       generateTiles2(8);
+      timeHelper(180);
+    }
+  });
+});
+
+failLevelBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    progressBar.style.display = 'block';
+    if (btn.id == 'fail-play-easy') {
+      generateTiles2(4);
+      timeHelper(30);
+    } else if (btn.id == 'fail-play-medium') {
+      generateTiles2(6);
+      timeHelper(90);
+    } else {
+      generateTiles2(8);
+      timeHelper(180);
     }
   });
 });
@@ -155,11 +196,11 @@ function onImageClick(e) {
       picture1.done = true;
       picture2.done = true;
       picture1 = picture2 = null;
-      if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
-        console.log('congrats');
-        gameBoard.style.display = 'none';
-        winMenu.style.display = 'grid';
-      }
+      // if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
+      //   console.log('congrats');
+      //   gameBoard.style.display = 'none';
+      //   winMenu.style.display = 'grid';
+      // }
     } else {
       busy = true;
       setTimeout(() => {
