@@ -13,8 +13,8 @@ const gameBoard = document.querySelector('.game-container'),
   failMediumBtn = document.getElementById('fail-play-medium'),
   failHardBtn = document.getElementById('fail-play-hard'),
   progressBar = document.getElementById('progressBar'),
-  scoreWon = document.getElementById('gameWon'),
-  scoreLost = document.getElementById('gameLost');
+  scoreWon = document.querySelectorAll('.scoreWon'),
+  scoreLost = document.querySelectorAll('.scoreLost');
 
 const boxes = document.querySelectorAll('.box .box-inner');
 
@@ -39,7 +39,18 @@ let winLevelBtns = [winEasyBtn, winMediumBtn, winHardBtn],
   gameLost = 0,
   moves = 0;
 
+let t = 0,
+  time;
+
 gameBoard.addEventListener('click', onImageClick);
+
+scoreLost.forEach((el) => {
+  el.innerHTML = localStorage.getItem('gameLost');
+});
+
+scoreWon.forEach((el) => {
+  el.innerHTML = localStorage.getItem('gameWon');
+});
 
 function generateCards(l, c) {
   let keys = Array(16).fill(0);
@@ -95,9 +106,6 @@ function generateTiles2(num) {
   });
 }
 
-let t = 0,
-  time;
-
 function timeHelper(sec) {
   window.t = sec;
   window.per = window.t;
@@ -107,7 +115,6 @@ function timeHelper(sec) {
 function timer() {
   time = window.t;
   window.t--;
-  // console.log(time);
   progressBar.style.width = (time * 100) / window.per + '%';
   let t2 = setTimeout(timer, 1000);
   if (time < 0) {
@@ -115,7 +122,11 @@ function timer() {
     gameBoard.style.display = 'none';
     failMenu.style.display = 'grid';
     gameLost++;
-    scoreLost.textContent = gameLost;
+
+    localStorage.setItem('gameLost', gameLost);
+    scoreLost.forEach((el) => {
+      el.innerHTML = localStorage.getItem('gameLost');
+    });
   }
   if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
     console.log('congrats');
@@ -124,7 +135,11 @@ function timer() {
     gameBoard.style.display = 'none';
     winMenu.style.display = 'grid';
     gameWon++;
-    scoreWon.textContent = gameWon;
+
+    localStorage.setItem('gameWon', gameWon);
+    scoreWon.forEach((el) => {
+      el.innerHTML = localStorage.getItem('gameWon');
+    });
   }
 }
 
@@ -196,11 +211,6 @@ function onImageClick(e) {
       picture1.done = true;
       picture2.done = true;
       picture1 = picture2 = null;
-      // if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
-      //   console.log('congrats');
-      //   gameBoard.style.display = 'none';
-      //   winMenu.style.display = 'grid';
-      // }
     } else {
       busy = true;
       setTimeout(() => {
