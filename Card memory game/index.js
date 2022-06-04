@@ -34,6 +34,9 @@ let winLevelBtns = [winEasyBtn, winMediumBtn, winHardBtn],
   picture1,
   picture2,
   busy = false,
+  easy = false,
+  medium = false,
+  hard = false,
   gameWon = 0,
   gameLost = 0,
   moves = 0;
@@ -53,9 +56,11 @@ scoreWon.forEach((el) => {
 
 function generateCards(l, c, totalCards, totalPairs) {
   let keys = Array(totalCards).fill(0);
+  console.log(keys);
   let key = 0;
   for (let i = 0; i < keys.length; i++) {
     keys[i] = (i % totalPairs) + 1;
+    console.log(keys[i]);
   }
 
   for (let i = 0; i < l; i++) {
@@ -77,7 +82,7 @@ function generateNum(min, max) {
 
 function generateTiles(num) {
   gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
-  generateCards(num, num, num * num, num + num);
+  generateCards(num, num, num * num, (num * num) / 2);
   winMenu.style.display = 'none';
   failMenu.style.display = 'none';
   document.querySelectorAll('img').forEach((image) => {
@@ -87,6 +92,9 @@ function generateTiles(num) {
 }
 
 function onReset() {
+  easy = false;
+  medium = false;
+  hard = false;
   failMenu.style.display = 'none';
   winMenu.style.display = 'none';
   gameBoard.style.display = 'grid';
@@ -98,7 +106,7 @@ function onReset() {
 function generateTiles2(num) {
   onReset();
   gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
-  generateCards(num, num, num * num, num + num);
+  generateCards(num, num, num * num, (num * num) / 2);
   document.querySelectorAll('img').forEach((image) => {
     image.style.width = `calc(100vw / ${num})`;
     image.style.height = `calc(95vh / ${num})`;
@@ -127,10 +135,36 @@ function timer() {
       el.innerHTML = localStorage.getItem('gameLost');
     });
   }
-  if (okPairs == 8 || okPairs == 18 || okPairs == 32) {
-    console.log('congrats');
-    progressBar.style.display = 'none';
+  if (okPairs == 8 && easy) {
+    console.log('congrats easy');
     clearInterval(t2);
+    progressBar.style.display = 'none';
+    gameBoard.style.display = 'none';
+    winMenu.style.display = 'grid';
+    gameWon++;
+
+    localStorage.setItem('gameWon', gameWon);
+    scoreWon.forEach((el) => {
+      el.innerHTML = localStorage.getItem('gameWon');
+    });
+  }
+  if (okPairs == 18 && medium) {
+    console.log('congrats medium');
+    clearInterval(t2);
+    progressBar.style.display = 'none';
+    gameBoard.style.display = 'none';
+    winMenu.style.display = 'grid';
+    gameWon++;
+
+    localStorage.setItem('gameWon', gameWon);
+    scoreWon.forEach((el) => {
+      el.innerHTML = localStorage.getItem('gameWon');
+    });
+  }
+  if (okPairs == 32 && hard) {
+    console.log('congrats hard');
+    clearInterval(t2);
+    progressBar.style.display = 'none';
     gameBoard.style.display = 'none';
     winMenu.style.display = 'grid';
     gameWon++;
@@ -147,12 +181,15 @@ levelBtns.forEach((btn) => {
     gameBoard.style.display = 'grid';
     progressBar.style.display = 'block';
     if (btn.textContent === 'easy') {
+      easy = true;
       generateTiles(4);
       timeHelper(30);
     } else if (btn.textContent === 'medium') {
+      medium = true;
       generateTiles(6);
       timeHelper(90);
     } else {
+      hard = true;
       generateTiles(8);
       timeHelper(180);
     }
@@ -164,12 +201,15 @@ winLevelBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     progressBar.style.display = 'block';
     if (btn.id == 'win-play-easy') {
+      easy = true;
       generateTiles2(4);
       timeHelper(30);
     } else if (btn.id == 'win-play-medium') {
+      medium = true;
       generateTiles2(6);
       timeHelper(90);
     } else {
+      hard = true;
       generateTiles2(8);
       timeHelper(180);
     }
@@ -180,12 +220,15 @@ failLevelBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     progressBar.style.display = 'block';
     if (btn.id == 'fail-play-easy') {
+      easy = true;
       generateTiles2(4);
       timeHelper(30);
     } else if (btn.id == 'fail-play-medium') {
+      medium = true;
       generateTiles2(6);
       timeHelper(90);
     } else {
+      hard = true;
       generateTiles2(8);
       timeHelper(180);
     }
