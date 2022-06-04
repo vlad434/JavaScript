@@ -51,11 +51,11 @@ scoreWon.forEach((el) => {
   el.innerHTML = localStorage.getItem('gameWon');
 });
 
-function generateCards(l, c) {
-  let keys = Array(16).fill(0);
+function generateCards(l, c, totalCards, totalPairs) {
+  let keys = Array(totalCards).fill(0);
   let key = 0;
   for (let i = 0; i < keys.length; i++) {
-    keys[i] = (i % 8) + 1;
+    keys[i] = (i % totalPairs) + 1;
   }
 
   for (let i = 0; i < l; i++) {
@@ -77,7 +77,7 @@ function generateNum(min, max) {
 
 function generateTiles(num) {
   gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
-  generateCards(num, num);
+  generateCards(num, num, num * num, num + num);
   winMenu.style.display = 'none';
   failMenu.style.display = 'none';
   document.querySelectorAll('img').forEach((image) => {
@@ -98,7 +98,7 @@ function onReset() {
 function generateTiles2(num) {
   onReset();
   gameBoard.style.gridTemplateColumns = `repeat(${num}, auto)`;
-  generateCards(num, num);
+  generateCards(num, num, num * num, num + num);
   document.querySelectorAll('img').forEach((image) => {
     image.style.width = `calc(100vw / ${num})`;
     image.style.height = `calc(95vh / ${num})`;
