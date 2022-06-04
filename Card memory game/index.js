@@ -1,5 +1,4 @@
 const gameBoard = document.querySelector('.game-container'),
-  playBtn = document.getElementById('play'),
   mainMenu = document.querySelector('.main-menu'),
   failMenu = document.querySelector('.fail-menu'),
   winMenu = document.querySelector('.win-menu'),
@@ -16,7 +15,7 @@ const gameBoard = document.querySelector('.game-container'),
   scoreWon = document.querySelectorAll('.scoreWon'),
   scoreLost = document.querySelectorAll('.scoreLost');
 
-const boxes = document.querySelectorAll('.box .box-inner');
+const boxes = document.querySelectorAll('.box-inner');
 
 boxes.forEach((box) => {
   box.addEventListener('click', () => {
@@ -201,10 +200,10 @@ function onImageClick(e) {
 
   if (!picture1) {
     picture1 = picture;
-    picture1.setAttribute('src', `./img/${key}.PNG`);
+    picture1.setAttribute('src', `./img/${key}.png`);
   } else {
     picture2 = picture;
-    picture2.setAttribute('src', `./img/${key}.PNG`);
+    picture2.setAttribute('src', `./img/${key}.png`);
     moves++;
     if (picture1.k == picture2.k) {
       okPairs++;

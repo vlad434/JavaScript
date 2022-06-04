@@ -34,6 +34,7 @@ body {
 }
 
 .box-inner {
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: 100%;
@@ -115,12 +116,19 @@ body {
   flex-direction: column;
 }
 
-.play button {
+#play-easy,
+#play-medium,
+#play-hard {
+  cursor: pointer;
   width: 100%;
   height: 33.3%;
   font-size: 1rem;
   text-transform: uppercase;
-  background-color: transparent;
+  background: linear-gradient(
+    143deg,
+    rgba(187, 11, 11, 1) 55%,
+    rgba(11, 187, 119, 1) 45%
+  );
   color: #fff;
   font-weight: bold;
 }
