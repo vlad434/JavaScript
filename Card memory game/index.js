@@ -56,11 +56,11 @@ scoreWon.forEach((el) => {
 
 function generateCards(l, c, totalCards, totalPairs) {
   let keys = Array(totalCards).fill(0);
-  console.log(keys);
+  // console.log(keys);
   let key = 0;
   for (let i = 0; i < keys.length; i++) {
     keys[i] = (i % totalPairs) + 1;
-    console.log(keys[i]);
+    // console.log(keys[i]);
   }
 
   for (let i = 0; i < l; i++) {
@@ -136,7 +136,7 @@ function timer() {
     });
   }
   if (okPairs == 8 && easy) {
-    console.log('congrats easy');
+    // console.log('congrats easy');
     clearInterval(t2);
     progressBar.style.display = 'none';
     gameBoard.style.display = 'none';
@@ -149,7 +149,7 @@ function timer() {
     });
   }
   if (okPairs == 18 && medium) {
-    console.log('congrats medium');
+    // console.log('congrats medium');
     clearInterval(t2);
     progressBar.style.display = 'none';
     gameBoard.style.display = 'none';
@@ -162,7 +162,7 @@ function timer() {
     });
   }
   if (okPairs == 32 && hard) {
-    console.log('congrats hard');
+    // console.log('congrats hard');
     clearInterval(t2);
     progressBar.style.display = 'none';
     gameBoard.style.display = 'none';
