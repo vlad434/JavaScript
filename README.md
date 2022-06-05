@@ -30,7 +30,7 @@
 24 | [Weather App](https://github.com/vlad434/JavaScript/tree/master/Weather%20App) | http://vlad434-weather-app.netlify.app | in progress..  |
 25 | [Product Landing Page](https://github.com/vlad434/JavaScript/tree/master/Product%20Landing%20Page) | https://vlad434-product-landing-page.netlify.app | DONE | 
 26 | [Word Frequency Counter](https://github.com/vlad434/JavaScript/tree/master/Word%20Frequency%20Counter) | https://vlad434-word-frequency-counter.netlify.app | DONE | 
-
+27 | [Card Memory Game](https://github.com/vlad434/JavaScript/tree/master/Card%20memory%20game) | https://vlad434-card-memory-game.netlify.app/ | DONE | 
 
 
 # Side Work
