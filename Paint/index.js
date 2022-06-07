@@ -1,44 +1,93 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas'),
+  ctx = canvas.getContext('2d');
+canvas.height = window.innerHeight - 200;
+canvas.width = window.innerWidth - 100;
+ctx.fillStyle = '#FFFFFF';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-//check if it is painting or not
-let isPainting = false;
+let start_background_color = 'white',
+  isPainting = false;
+(draw_color = 'black'), (draw_width = '2');
 
-window.addEventListener('load', () => {
-  //   console.log('hello');
+let path = [],
+  index = -1;
 
-  //how canvas gets a width and height
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+const undoBtn = document.getElementById('undo'),
+  clearBtn = document.getElementById('clear'),
+  saveBtn = document.getElementById('save');
 
-  function start(e) {
-    isPainting = true;
-    draw(e);
-  }
+undoBtn.addEventListener('click', undo);
+clearBtn.addEventListener('click', clear);
+saveBtn.addEventListener('click', save);
 
-  function end() {
-    isPainting = false;
-    ctx.beginPath();
-  }
+canvas.addEventListener('touchstart', start, false);
+canvas.addEventListener('touchmove', draw, false);
+canvas.addEventListener('mousedown', start, false);
+canvas.addEventListener('mousemove', draw, false);
 
-  function draw(e) {
-    if (!isPainting) return;
-    ctx.lineWidth = 10;
-    ctx.lineCap = 'round'; //line shape
-    ctx.strokeStyle = 'red'; //line color
+canvas.addEventListener('touchend', end, false);
+canvas.addEventListener('mouseup', end, false);
+canvas.addEventListener('mouseout', end, false);
 
-    ctx.lineTo(e.clientX, e.clientY);
+function change_color(el) {
+  draw_color = el.style.backgroundColor;
+}
+
+function start(e) {
+  isPainting = true;
+  ctx.beginPath();
+  ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+  e.preventDefault();
+}
+
+function draw(e) {
+  if (isPainting) {
+    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    ctx.strokeStyle = draw_color;
+    ctx.lineWidth = draw_width;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
     ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(e.clientX, e.clientY);
   }
+  e.preventDefault();
+}
 
-  canvas.addEventListener('mousedown', start);
-  canvas.addEventListener('mouseup', end);
-  canvas.addEventListener('mousemove', draw);
-});
+function end(e) {
+  if (isPainting) {
+    ctx.stroke();
+    ctx.closePath();
+    isPainting = false;
+  }
+  e.preventDefault();
+  if (e.type !== 'mouseout') {
+    path.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    index += 1;
+  }
+}
 
-// window.addEventListener('resize', () => {
-//   canvas.height = window.innerHeight;
-//   canvas.width = window.innerWidth;
-// });
+function clear() {
+  ctx.fillStyle = start_background_color;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  path = [];
+  index = -1;
+}
+
+function undo() {
+  if (index <= 0) {
+    clear();
+  } else {
+    index -= 1;
+    path.pop();
+    ctx.putImageData(path[index], 0, 0);
+  }
+}
+function save() {
+  //   console.log(canvas.toDataURL());
+  const link = document.createElement('a');
+  link.download = 'download.png';
+  link.href = canvas.toDataURL();
+  link.click();
+  link.delete;
+}

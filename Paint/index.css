@@ -5,5 +5,59 @@
 }
 
 body {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
   overflow: hidden;
+  background-color: rgb(4, 79, 137);
+}
+
+canvas {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.tools .color {
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid black;
+  align-self: center;
+  margin: 0 15px;
+}
+
+.btn {
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  border: 2px solid black;
+  cursor: pointer;
+  color: #fff;
+  background: #222;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+.color-picker {
+  align-self: center;
+  margin: 0 15px;
+  height: 50px;
+}
+
+.pen-width {
+  margin: 0 15px;
+  height: 50px;
 }
