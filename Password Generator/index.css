@@ -1,0 +1,76 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(52, 51, 51);
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 40%;
+  width: 40%;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgb(4, 49, 111);
+  box-shadow: 0px 0px 19px 7px rgba(175, 175, 175, 0.65);
+  color: #fff;
+}
+
+.result-container {
+  width: 80%;
+  height: 7.5%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem;
+  border: 1px solid #fff;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.setting {
+  width: 100%;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.settings {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+input[type='checkbox'] {
+  margin-right: 1.5rem;
+}
+
+.generate {
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: 0.5s linear;
+}
+
+.generate:hover {
+  color: rgb(4, 49, 111);
+  background-color: #fff;
+}

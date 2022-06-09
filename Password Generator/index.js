@@ -1,3 +1,4 @@
+const resultContainer = document.querySelector('.result-container');
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
 const uppercaseEl = document.getElementById('uppercase');
@@ -6,80 +7,90 @@ const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 const clipboardEl = document.getElementById('clipboard');
 const generateBtn = document.getElementById('generate');
+const rangeVal = document.getElementById('range-value');
 
-
+lengthEl.addEventListener('change', () => {
+  rangeVal.innerText =
+    lengthEl.value > 1
+      ? lengthEl.value + ' characters'
+      : lengthEl.value + ' character';
+});
 
 const randomFunction = {
-    lower: generateRandomLowerCaseLetter,
-    upper: generateRandomUpperCaseLetter,
-    number: generateRandomNumbers,
-    symbol: generateRandomSymbols
-}
+  lower: generateRandomLowerCaseLetter,
+  upper: generateRandomUpperCaseLetter,
+  number: generateRandomNumbers,
+  symbol: generateRandomSymbols,
+};
 
-clipboardEl.addEventListener('click', ()=>{
-    const textarea = document.createElement('textarea');
-    const pasw = resultEl.innerText;
+clipboardEl.addEventListener('click', () => {
+  const textarea = document.createElement('textarea');
+  const pasw = resultEl.innerText;
 
-    if(!pasw){
-        return;
-    }else{
-        textarea.value = pasw;
-    }
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    textarea.remove();
-    alert('Password copied to clipboard');
+  if (!pasw) {
+    return;
+  } else {
+    textarea.value = pasw;
+  }
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
 });
 
-generateBtn.addEventListener('click', ()=>{
-    const length = +lengthEl.value;
-    const hasLower = lowercaseEl.checked;
-    const hasUpper = uppercaseEl.checked;
-    const hasNumber = numbersEl.checked;
-    const hasSymbol = symbolsEl.checked;
- 
-    resultEl.innerText = generatePassword(length, hasLower, hasUpper, hasNumber, hasSymbol);
-    
+generateBtn.addEventListener('click', () => {
+  const length = +lengthEl.value;
+  const hasLower = lowercaseEl.checked;
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasSymbol = symbolsEl.checked;
+
+  resultEl.innerText = generatePassword(
+    length,
+    hasLower,
+    hasUpper,
+    hasNumber,
+    hasSymbol
+  );
 });
 
-function generatePassword(length, lower, upper, number, symbol){
-    let password = '';
+function generatePassword(length, lower, upper, number, symbol) {
+  let password = '';
 
-    let checkedCount = lower + upper + number + symbol;
-    
-    const checkedArr = [{lower}, {upper}, {number}, {symbol}]
-                        .filter(item=> Object.values(item)[0]);
+  let checkedCount = lower + upper + number + symbol;
 
-    if(checkedCount === 0){
-        return '';
-    }
+  const checkedArr = [{ lower }, { upper }, { number }, { symbol }].filter(
+    (item) => Object.values(item)[0]
+  );
 
-    for(let i = 0 ; i < length; i+= checkedCount){
-        checkedArr.forEach(check => {
-            const funcName = Object.keys(check)[0]; 
+  if (checkedCount === 0) {
+    return '';
+  }
 
-            password += randomFunction[funcName]();
-        });
-    }
-    const finalPass = password.slice(0, length);
-    return finalPass;
+  for (let i = 0; i < length; i += checkedCount) {
+    checkedArr.forEach((check) => {
+      const funcName = Object.keys(check)[0];
+
+      password += randomFunction[funcName]();
+    });
+  }
+  const finalPass = password.slice(0, length);
+  return finalPass;
 }
 
-function generateRandomLowerCaseLetter(){
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+function generateRandomLowerCaseLetter() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-function generateRandomUpperCaseLetter(){
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+function generateRandomUpperCaseLetter() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
-function generateRandomNumbers(){
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+function generateRandomNumbers() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
-function generateRandomSymbols(){
-    const symbols = '!@#$%^&*(){}[]=<>/.,';
-    return symbols[Math.floor(Math.random() * symbols.length)];
+function generateRandomSymbols() {
+  const symbols = '!@#$%^&*(){}[]=<>/.,';
+  return symbols[Math.floor(Math.random() * symbols.length)];
 }
-    
